@@ -12,7 +12,7 @@ const OtpInputScreen = () => {
   const navigation = useNavigation<OtpScreenNavigationProp>();
   const route = useRoute<OtpScreenRouteProp>();
   const { method, value } = route.params;
-  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [otp, setOtp] = useState(['', '', '', '']);
   const [countdown, setCountdown] = useState(30);
   const [isResendDisabled, setIsResendDisabled] = useState(true);
   const inputRefs = useRef<(TextInput | null)[]>([]);
@@ -32,21 +32,21 @@ const OtpInputScreen = () => {
   const handleResendOtp = () => {
     setCountdown(30);
     setIsResendDisabled(true);
-    setOtp(['', '', '', '', '', '']);
+    setOtp(['', '', '', '']);
     // TODO: Implement resend OTP logic
   };
 
   const handleVerifyOtp = () => {
     const otpValue = otp.join('');
-    if (otpValue.length === 6) {
-      if (otpValue === '000000') {
+    if (otpValue.length === 4) {
+      if (otpValue === '0000') {
         // OTP verified successfully, navigate to Login page directly
         navigation.navigate('ContinueBoarding');
       } else {
         Alert.alert('Error', 'Invalid OTP. Please try again.');
       }
     } else {
-      Alert.alert('Error', 'Please enter a valid 6-digit OTP');
+      Alert.alert('Error', 'Please enter a valid 4-digit OTP');
     }
   };
 
@@ -57,7 +57,7 @@ const OtpInputScreen = () => {
       setOtp(newOtp);
 
       // Auto focus next input
-      if (text && index < 5) {
+      if (text && index < 4) {
         inputRefs.current[index + 1]?.focus();
       }
     }
@@ -99,12 +99,12 @@ const OtpInputScreen = () => {
         </View>
 
         {/* OTP Input Fields */}
-        <View className="flex-row justify-between gap-2 mb-12">
+        <View className="flex-row justify-between mb-12">
           {otp.map((digit, index) => (
             <TextInput
               key={index}
               ref={(ref) => (inputRefs.current[index] = ref)}
-              className="w-14 h-14 bg-gray-50 border border-gray-200 rounded-2xl text-center text-black text-2xl font-semibold"
+              className="w-20 h-20 bg-gray-50 border border-teal-500 rounded-2xl text-center text-black text-2xl font-semibold"
               maxLength={1}
               keyboardType="number-pad"
               value={digit}
@@ -131,9 +131,9 @@ const OtpInputScreen = () => {
         {/* Verify Button */}
         <View className="flex-1 justify-end pb-12">
           <Pressable
-            className={`w-full py-5 rounded-2xl shadow-sm ${otp.join('').length === 6 ? 'bg-teal-600' : 'bg-gray-300'}`}
+            className={`w-full py-5 rounded-2xl shadow-sm ${otp.join('').length === 4 ? 'bg-teal-600' : 'bg-gray-300'}`}
             onPress={handleVerifyOtp}
-            disabled={otp.join('').length < 6}
+            disabled={otp.join('').length < 4}
           >
             <Text className="text-white text-center text-lg font-semibold">
               Verify & Continue

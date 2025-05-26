@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type OnboardingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Onboarding'>;
 
@@ -32,7 +33,20 @@ const OnboardingScreen = () => {
           resizeMode="cover"
           style={{ opacity: 0.1 }}
         />
-        <View className="flex-1 gap-2 p-6 justify-end">
+        <LinearGradient
+          colors={['rgb(255, 255, 255)', 'transparent']}
+          locations={[0, 1]}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '100%',
+            zIndex: 1
+          }}
+        />
+
+        <View className="flex-1 gap-2 p-6 justify-end z-10">
           <Pressable
             className="bg-white w-full py-4 rounded-lg mb-2"
             onPress={() => navigation.navigate('Login')}
