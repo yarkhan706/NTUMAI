@@ -4,7 +4,14 @@ module.exports = {
   content: ["./App.tsx", "./components/**/*.{js,jsx,ts,tsx}", "./screens/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'ubuntu': ['Ubuntu-Regular'],
+        'ubuntu-bold': ['Ubuntu-Bold'],
+        'ubuntu-light': ['Ubuntu-Light'],
+        'ubuntu-medium': ['Ubuntu-Medium'],
+      }
+    },
   },
   plugins: [],
 }
