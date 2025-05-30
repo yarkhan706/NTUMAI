@@ -10,11 +10,11 @@ interface AuthInputProps {
 
 const AuthInput: React.FC<AuthInputProps> = ({ method, value, onChangeText }) => {
   return (
-    <View className="w-full flex-row items-center border border-gray-200 rounded-2xl px-5 py-5 mb-10 bg-gray-50">
+    <View className="w-full flex-row items-center rounded-full px-5 py-5 mb-10 bg-gray-50">
       {method === 'phone' ? (
         <View className="flex-row items-center">
           <Text className="text-black font-semibold text-base mr-3">+260</Text>
-          <View className="h-6 w-px bg-gray-300 mr-4" />
+          <View className="h-6 w-px bg-gray-300  mr-4" />
         </View>
       ) : (
         <View className="mr-4">
@@ -37,7 +37,7 @@ const AuthInput: React.FC<AuthInputProps> = ({ method, value, onChangeText }) =>
         </View>
       )}
       <TextInput
-        className="flex-1 text-black text-base font-medium"
+        className="flex-1 text-black text-base font-medium rounded-full"
         placeholder={
           method === 'phone' ? 'Enter Your mobile number' : 'Enter Your email address'
         }

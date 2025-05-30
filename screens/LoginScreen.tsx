@@ -1,12 +1,10 @@
-// SelectMethodScreen.tsx
 import React, { useState } from 'react';
-import { View, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App';
 
-// Import reusable components
 import AuthHeader from '../src/components/auth/AuthHeader';
 import AuthMethodTabs from '../src/components/auth/AuthMethodTabs';
 import AuthInput from '../src/components/auth/AuthInput';
@@ -29,67 +27,65 @@ const LoginScreen = () => {
   const handleNext = () => {
     if (!inputValue) return;
 
-    // Special cases for navigation
     if (selectedMethod === 'phone') {
-      if (inputValue === '0000') {
-        navigation.navigate('Home');
-        return;
-      } else if (inputValue === '1111') {
-        navigation.navigate('DriverHome');
-        return;
-      } else if (inputValue === '2222') {
-        navigation.navigate('AdminDashboard');
-        return;
-      }
+      if (inputValue === '0000') return navigation.navigate('Home');
+      if (inputValue === '1111') return navigation.navigate('DriverHome');
+      if (inputValue === '2222') return navigation.navigate('AdminDashboard');
+      if (inputValue === '3333') return navigation.navigate('VendorDashboard');
     }
-    
-    // Default behavior for other inputs
+
     navigation.navigate('Otp', { method: selectedMethod, value: inputValue });
   };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <KeyboardAvoidingView 
-        style={{ flex: 1 }} 
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      >
-        <View className="flex-1 bg-white">
-          <AuthHeader 
-            title="Tiye, tiye!" 
-            subtitle="Login below"
-            description="Login with your phone number or email!"
-          />
+      <View className="flex-1 bg-white">
+        <StatusBar style="dark" />
 
-          <View className="flex-1 px-6 ">
-            <AuthMethodTabs 
-              selectedMethod={selectedMethod}
-              onMethodChange={handleMethodChange}
-            />
+        <AuthHeader 
+          title="Tiye, tiye!" 
+          subtitle="Login below"
+          description="Login with your phone number or email!"
+        />
 
-            <AuthInput 
-              method={selectedMethod}
-              value={inputValue}
-              onChangeText={setInputValue}
-            />
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          className="flex-1"
+        >
+          <ScrollView
+            keyboardShouldPersistTaps="handled"
+            contentContainerStyle={{ flexGrow: 1 }}
+          >
+            <View className="flex-1 px-6">
+              <AuthMethodTabs 
+                selectedMethod={selectedMethod}
+                onMethodChange={handleMethodChange}
+              />
 
-            <AuthButton 
-              title="Login"
-              onPress={handleNext}
-              className="mb-10"
-            />
+              <AuthInput 
+                method={selectedMethod}
+                value={inputValue}
+                onChangeText={setInputValue}
+              />
 
-            <SocialAuth />
-          </View>
+              <AuthButton 
+                title="Login"
+                onPress={handleNext}
+                className="mb-10"
+              />
 
-          <AuthFooter 
-            questionText="Don't have an account?"
-            actionText="Sign Up"
-            onPress={() => navigation.navigate('SelectMethod')}
-          />
+              <SocialAuth />
+            </View>
+          </ScrollView>
+        </KeyboardAvoidingView>
 
-          <StatusBar style="dark" />
-        </View>
-      </KeyboardAvoidingView>
+        {/* Footer should stay outside the keyboard area */}
+        <AuthFooter 
+          questionText="Don't have an account?"
+          actionText="Sign Up"
+          onPress={() => navigation.navigate('SelectMethod')}
+        />
+      </View>
     </TouchableWithoutFeedback>
   );
 };

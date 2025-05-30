@@ -19,6 +19,7 @@ import DriverHome, { DriverDashboard, DriverEarnings, DriverOrders, DriverRoutes
 import { CartScreen, ProductDetailScreen, RestaurantDetailScreen } from './screens/home/MarketplaceScreen';
 import {CheckoutScreen,OrderTrackingScreen,RateOrderScreen } from './screens/checkout/CheckoutScreen';
 import AdminDashboardNavigator from './screens/admin/AdminDashbooard';
+import VendorTabs from './screens/vendor/VendorTabs';
 
 // Keep splash screen visible while loading fonts
 SplashScreen.preventAutoHideAsync();
@@ -45,6 +46,7 @@ export type RootStackParamList = {
   OrderTracking: undefined;
   RateOrder: undefined;
   AdminDashboard: undefined;
+  VendorDashboard: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -191,6 +193,16 @@ export default function App() {
                 <Stack.Screen
                   name="AdminDashboard"
                   component={AdminDashboardNavigator}
+                  options={{
+                    headerShown: false,
+                    animation: 'slide_from_right',
+                  }}
+                />
+
+                {/* Vendor Navigation Stack */}
+                <Stack.Screen
+                  name="VendorDashboard"
+                  component={VendorTabs}
                   options={{
                     headerShown: false,
                     animation: 'slide_from_right',

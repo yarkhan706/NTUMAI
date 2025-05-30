@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Image, Text, Pressable, ImageBackground, Button } from 'react-native';
+import { View, Image, Text, Pressable, ImageBackground } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App';
 import { LinearGradient } from 'expo-linear-gradient';
+import Button from '../src/components/ui/Button';
 
 type OnboardingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Onboarding'>;
 
@@ -26,12 +27,12 @@ const OnboardingScreen = () => {
           Find your favorite Meals at the best prices with exclusive deals only on alimnts app.
         </Text>
       </View>
-      <View className="relative h-1/5 bg-teal-700">
+      <View className="relative h-1/4 bg-teal-600">
         <ImageBackground
           source={require('../assets/splash_style.png')}
           className="absolute top-0 left-0 w-full h-full"
           resizeMode="cover"
-          style={{ opacity: 0.1 }}
+          style={{ opacity: 0.3}}
         />
         <LinearGradient
           colors={['rgb(255, 255, 255)', 'transparent']}
@@ -47,12 +48,11 @@ const OnboardingScreen = () => {
         />
 
         <View className="flex-1 gap-2 p-6 justify-end z-10">
-          <Pressable
-            className="bg-white w-full py-4 rounded-lg mb-2"
+          <Button
+            title="Login"
             onPress={() => navigation.navigate('Login')}
-          >
-            <Text className="text-teal-700 text-center text-lg font-semibold">Login</Text>
-          </Pressable>
+            className="text-black bg-white"
+          />
           <Pressable
             className="bg-black w-full py-4 rounded-lg"
             onPress={() => navigation.navigate('SelectMethod')}
