@@ -1,5 +1,6 @@
 import React from "react";
-import {Pressable,Text} from "react-native";
+import {Pressable} from "react-native";
+import AppText from "../../../components/AppText";
 
 interface ButtonProps{
     title:string;
@@ -13,7 +14,7 @@ const Button:React.FC<ButtonProps>=(props)=>{
         className={`bg-teal-600 w-full py-4 rounded-lg mb-2 ${props.className}`}
         onPress={props.onPress}
         >
-            <Text className={` text-center text-lg font-semibold ${props.className}`}>{props.title}</Text>
+            <AppText className={` text-center text-lg font-semibold ${props.className}`}>{props.title}</AppText>
         </Pressable>
     )
 }

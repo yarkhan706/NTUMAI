@@ -13,14 +13,58 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "fonts": [
+        {
+          "path": "./assets/fonts/Ubuntu-Regular.ttf",
+          "weight": "normal",
+          "style": "normal"
+        },
+        {
+          "path": "./assets/fonts/Ubuntu-Bold.ttf",
+          "weight": "bold",
+          "style": "normal"
+        },
+        {
+          "path": "./assets/fonts/Ubuntu-Light.ttf",
+          "weight": "normal",
+          "style": "italic"
+        },
+        {
+          "path": "./assets/fonts/Ubuntu-Medium.ttf",
+          "weight": "medium",
+          "style": "normal"
+        }
+      ]
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "fonts": [
+        {
+          "path": "./assets/fonts/Ubuntu-Regular.ttf",
+          "weight": "normal",
+          "style": "normal"
+        },
+        {
+          "path": "./assets/fonts/Ubuntu-Bold.ttf",
+          "weight": "bold",
+          "style": "normal"
+        },
+        {
+          "path": "./assets/fonts/Ubuntu-Light.ttf",
+          "weight": "normal",
+          "style": "italic"
+        },
+        {
+          "path": "./assets/fonts/Ubuntu-Medium.ttf",
+          "weight": "medium",
+          "style": "normal"
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

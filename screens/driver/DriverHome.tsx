@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import AppText from '../../components/AppText';
 
 // Driver Dashboard Main Screen
 const DriverDashboard = ({ navigation }) => {
@@ -33,8 +34,8 @@ const DriverDashboard = ({ navigation }) => {
             className="w-10 h-10 rounded-full mr-3"
           />
           <View>
-            <Text className="text-lg font-semibold text-gray-900">Today's Income + 2.5R</Text>
-            <Text className="text-sm text-gray-500">Driver Dashboard</Text>
+            <AppText className="text-lg font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Semibold'}}>Today's Income + 2.5R</AppText>
+            <AppText className="text-sm text-gray-500">Driver Dashboard</AppText>
           </View>
         </View>
         <View className="flex-row items-center">
@@ -52,8 +53,8 @@ const DriverDashboard = ({ navigation }) => {
         <View className="mx-4 mt-4 bg-white rounded-2xl p-4 ">
           <View className="flex-row items-center justify-between mb-4">
             <View>
-              <Text className="text-2xl font-bold text-gray-900">${currentBalance.toFixed(2)}</Text>
-              <Text className="text-sm text-gray-500">Today's Earnings</Text>
+              <AppText className="text-2xl font-bold text-gray-900" style={{fontFamily: 'Ubuntu_Bold'}}>${currentBalance.toFixed(2)}</AppText>
+              <AppText className="text-sm text-gray-500">Today's Earnings</AppText>
             </View>
             <View className="bg-emerald-100 p-2 rounded-full">
               <Ionicons name="wallet" size={24} color="#10b981" />
@@ -63,12 +64,12 @@ const DriverDashboard = ({ navigation }) => {
           <View className="flex-row justify-between">
             <View className="flex-1 mr-2">
               <TouchableOpacity className="bg-emerald-500 py-3 rounded-xl">
-                <Text className="text-white text-center font-semibold">Cash Out</Text>
+                <AppText className="text-white text-center font-semibold" style={{fontFamily:'Ubuntu_Bold'}}>Cash Out</AppText>
               </TouchableOpacity>
             </View>
             <View className="flex-1 ml-2">
               <TouchableOpacity className="bg-gray-100 py-3 rounded-xl">
-                <Text className="text-gray-700 text-center font-semibold">History</Text>
+                <AppText className="text-gray-700 text-center font-semibold" style={{fontFamily:'Ubuntu_Bold'}}>History</AppText>
               </TouchableOpacity>
             </View>
           </View>
@@ -76,7 +77,7 @@ const DriverDashboard = ({ navigation }) => {
 
         {/* Online Status Toggle */}
         <View className="mx-4 mt-4 bg-white rounded-2xl p-4">
-          <Text className="text-lg font-semibold text-gray-900 mb-3">What's new on Hizzmat</Text>
+          <AppText className="text-lg font-semibold text-gray-900 mb-3" style={{fontFamily:'Ubuntu_Bold'}}>What's new on Hizzmat</AppText>
           
           <View className={`${isOnline ? 'bg-emerald-500' : 'bg-gray-300'} rounded-2xl p-4 flex-row items-center justify-between`}>
             <View className="flex-row items-center">
@@ -87,12 +88,12 @@ const DriverDashboard = ({ navigation }) => {
                 />
               </View>
               <View>
-                <Text className="text-white font-semibold text-lg">
+                <AppText className="text-white font-semibold text-lg" style={{fontFamily:'Ubuntu_Bold'}}>
                   {isOnline ? 'Go Online' : 'Get ready'}
-                </Text>
-                <Text className="text-white/80 text-sm">
+                </AppText>
+                <AppText className="text-white/80 text-sm">
                   {isOnline ? 'You are online' : 'Go online to start earning'}
-                </Text>
+                </AppText>
               </View>
             </View>
             <TouchableOpacity
@@ -110,21 +111,21 @@ const DriverDashboard = ({ navigation }) => {
 
         {/* Recent Orders */}
         <View className="mx-4 mt-4 bg-white rounded-2xl p-4">
-          <Text className="text-lg font-semibold text-gray-900 mb-3">Recent Orders:</Text>
+          <AppText className="text-lg font-semibold text-gray-900 mb-3" style={{fontFamily:'Ubuntu_Bold'}}>Recent Orders:</AppText>
           
           {[1, 2, 3, 4].map((order) => (
             <View key={order} className="flex-row items-center justify-between py-3 border-b border-gray-100 last:border-b-0">
               <View className="flex-row items-center flex-1">
                 <View className="w-2 h-2 bg-emerald-500 rounded-full mr-3" />
                 <View className="flex-1">
-                  <Text className="font-semibold text-gray-900">06 : 38 : 21</Text>
-                  <Text className="text-sm text-gray-500">DELIVERY Order #240...</Text>
-                  <Text className="text-sm text-emerald-600">Accept</Text>
+                  <AppText className="font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>06 : 38 : 21</AppText>
+                  <AppText className="text-sm text-gray-500">DELIVERY Order #240...</AppText>
+                  <AppText className="text-sm text-emerald-600">Accept</AppText>
                 </View>
               </View>
               <View className="items-end">
-                <Text className="font-semibold text-gray-900">$23.60</Text>
-                <Text className="text-sm text-gray-500">4.2 mi • 15 min</Text>
+                <AppText className="font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>$23.60</AppText>
+                <AppText className="text-sm text-gray-500">4.2 mi • 15 min</AppText>
               </View>
             </View>
           ))}
@@ -136,14 +137,14 @@ const DriverDashboard = ({ navigation }) => {
             className="bg-emerald-500 py-4 rounded-xl mb-3"
             onPress={() => navigation.navigate('DriverOrders')}
           >
-            <Text className="text-white text-center font-semibold text-lg">Delivery Orders</Text>
+            <AppText className="text-white text-center font-semibold text-lg" style={{fontFamily:'Ubuntu_Bold'}}>Delivery Orders</AppText>
           </TouchableOpacity>
           
           <TouchableOpacity 
             className="bg-white border border-emerald-500 py-4 rounded-xl"
             onPress={() => navigation.navigate('DriverRoutes')}
           >
-            <Text className="text-emerald-500 text-center font-semibold text-lg">Routes</Text>
+            <AppText className="text-emerald-500 text-center font-semibold text-lg" style={{fontFamily:'Ubuntu_Bold'}}>Routes</AppText>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -175,7 +176,7 @@ const DriverOrders = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
           <Ionicons name="arrow-back" size={24} color="#374151" />
         </TouchableOpacity>
-        <Text className="text-xl font-semibold text-gray-900">Orders</Text>
+        <AppText className="text-xl font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>Orders</AppText>
       </View>
 
       {/* Tab Navigation */}
@@ -184,17 +185,17 @@ const DriverOrders = ({ navigation }) => {
           onPress={() => setActiveTab('active')}
           className={`flex-1 py-2 rounded-lg ${activeTab === 'active' ? 'bg-white' : ''}`}
         >
-          <Text className={`text-center font-medium ${activeTab === 'active' ? 'text-gray-900' : 'text-gray-500'}`}>
+          <AppText className={`text-center font-medium ${activeTab === 'active' ? 'text-gray-900' : 'text-gray-500'}`} style={{fontFamily:'Ubuntu_Bold'}}>
             Active Orders
-          </Text>
+          </AppText>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setActiveTab('completed')}
           className={`flex-1 py-2 rounded-lg ${activeTab === 'completed' ? 'bg-white' : ''}`}
         >
-          <Text className={`text-center font-medium ${activeTab === 'completed' ? 'text-gray-900' : 'text-gray-500'}`}>
+          <AppText className={`text-center font-medium ${activeTab === 'completed' ? 'text-gray-900' : 'text-gray-500'}`} style={{fontFamily:'Ubuntu_Bold'}}>
             Completed
-          </Text>
+          </AppText>
         </TouchableOpacity>
       </View>
 
@@ -210,35 +211,35 @@ const DriverOrders = ({ navigation }) => {
                   order.status === 'pending' ? 'bg-yellow-500' :
                   order.status === 'active' ? 'bg-emerald-500' : 'bg-gray-400'
                 }`} />
-                <Text className="font-semibold text-gray-900">Order #{order.id}240</Text>
+                <AppText className="font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>Order #{order.id}240</AppText>
               </View>
-              <Text className="font-bold text-lg text-gray-900">${order.amount}</Text>
+              <AppText className="font-bold text-lg text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>${order.amount}</AppText>
             </View>
             
             <View className="flex-row justify-between items-center">
               <View>
-                <Text className="text-gray-600">Customer: {order.customer}</Text>
-                <Text className="text-sm text-gray-500">{order.distance} • {order.time}</Text>
+                <AppText className="text-gray-600">Customer: {order.customer}</AppText>
+                <AppText className="text-sm text-gray-500">{order.distance} • {order.time}</AppText>
               </View>
               <View className="flex-row">
                 {order.status === 'pending' && (
                   <>
                     <TouchableOpacity className="bg-red-100 px-3 py-1 rounded-lg mr-2">
-                      <Text className="text-red-600 font-medium">Decline</Text>
+                      <AppText className="text-red-600 font-medium">Decline</AppText>
                     </TouchableOpacity>
                     <TouchableOpacity className="bg-emerald-500 px-3 py-1 rounded-lg">
-                      <Text className="text-white font-medium">Accept</Text>
+                      <AppText className="text-white font-medium">Accept</AppText>
                     </TouchableOpacity>
                   </>
                 )}
                 {order.status === 'active' && (
                   <TouchableOpacity className="bg-blue-500 px-3 py-1 rounded-lg">
-                    <Text className="text-white font-medium">Track</Text>
+                    <AppText className="text-white font-medium">Track</AppText>
                   </TouchableOpacity>
                 )}
                 {order.status === 'completed' && (
                   <View className="bg-gray-100 px-3 py-1 rounded-lg">
-                    <Text className="text-gray-600 font-medium">Completed</Text>
+                    <AppText className="text-gray-600 font-medium">Completed</AppText>
                   </View>
                 )}
               </View>
@@ -261,38 +262,38 @@ const DriverRoutes = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
           <Ionicons name="arrow-back" size={24} color="#374151" />
         </TouchableOpacity>
-        <Text className="text-xl font-semibold text-gray-900">Routes</Text>
+        <AppText className="text-xl font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>Routes</AppText>
       </View>
 
       {/* Map Placeholder */}
       <View className="flex-1 bg-gray-100 m-4 rounded-xl relative">
         <View className="absolute inset-0 items-center justify-center">
           <Ionicons name="map" size={48} color="#9ca3af" />
-          <Text className="text-gray-500 mt-2">Map View</Text>
-          <Text className="text-sm text-gray-400">Interactive route map</Text>
+          <AppText className="text-gray-500 mt-2">Map View</AppText>
+          <AppText className="text-sm text-gray-400">Interactive route map</AppText>
         </View>
         
         {/* Route Info Card */}
         <View className="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-4">
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-lg font-semibold text-gray-900">Current Route</Text>
-            <Text className="text-emerald-600 font-medium">4.7 mi</Text>
+            <AppText className="text-lg font-semibold text-gray-900">Current Route</AppText>
+            <AppText className="text-emerald-600 font-medium">4.7 mi</AppText>
           </View>
           
           <View className="flex-row items-center mb-3">
             <View className="w-3 h-3 bg-emerald-500 rounded-full mr-3" />
-            <Text className="text-gray-600 flex-1">123 Main St, Downtown</Text>
-            <Text className="text-sm text-gray-500">Pickup</Text>
+            <AppText className="text-gray-600 flex-1">123 Main St, Downtown</AppText>
+            <AppText className="text-sm text-gray-500">Pickup</AppText>
           </View>
           
           <View className="flex-row items-center mb-4">
             <View className="w-3 h-3 bg-red-500 rounded-full mr-3" />
-            <Text className="text-gray-600 flex-1">456 Oak Ave, Uptown</Text>
-            <Text className="text-sm text-gray-500">Drop-off</Text>
+            <AppText className="text-gray-600 flex-1">456 Oak Ave, Uptown</AppText>
+            <AppText className="text-sm text-gray-500">Drop-off</AppText>
           </View>
           
           <TouchableOpacity className="bg-emerald-500 py-3 rounded-xl">
-            <Text className="text-white text-center font-semibold">Start Navigation</Text>
+            <AppText className="text-white text-center font-semibold">Start Navigation</AppText>
           </TouchableOpacity>
         </View>
       </View>
@@ -319,7 +320,7 @@ const DriverEarnings = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
           <Ionicons name="arrow-back" size={24} color="#374151" />
         </TouchableOpacity>
-        <Text className="text-xl font-semibold text-gray-900">Earnings</Text>
+        <AppText className="text-xl font-semibold text-gray-900" style={{fontFamily:'Ubuntu_Bold'}}>Earnings</AppText>
       </View>
 
       <ScrollView className="flex-1">
@@ -331,59 +332,59 @@ const DriverEarnings = ({ navigation }) => {
               onPress={() => setSelectedPeriod(period)}
               className={`flex-1 py-2 rounded-lg ${selectedPeriod === period ? 'bg-white' : ''}`}
             >
-              <Text className={`text-center font-medium capitalize ${
+              <AppText className={`text-center font-medium capitalize ${
                 selectedPeriod === period ? 'text-gray-900' : 'text-gray-500'
               }`}>
                 {period === 'week' ? 'This Week' : period === 'month' ? 'This Month' : 'Today'}
-              </Text>
+              </AppText>
             </TouchableOpacity>
           ))}
         </View>
 
         {/* Earnings Summary */}
         <View className="mx-4 mb-4 bg-emerald-50 rounded-2xl p-6">
-          <Text className="text-3xl font-bold text-emerald-600 mb-2">
+          <AppText className="text-3xl font-bold text-emerald-600 mb-2" style={{fontFamily: 'Ubuntu_Bold'}}>
             ${earningsData[selectedPeriod].amount.toFixed(2)}
-          </Text>
-          <Text className="text-emerald-700 mb-4">
+          </AppText>
+          <AppText className="text-emerald-700 mb-4">
             Total Earnings ({selectedPeriod === 'today' ? 'Today' : selectedPeriod === 'week' ? 'This Week' : 'This Month'})
-          </Text>
+          </AppText>
           
           <View className="flex-row justify-between">
             <View className="items-center">
-              <Text className="text-2xl font-bold text-gray-900">{earningsData[selectedPeriod].trips}</Text>
-              <Text className="text-sm text-gray-600">Trips</Text>
+              <AppText className="text-2xl font-bold text-gray-900" style={{fontFamily: 'Ubuntu_Bold'}}>{earningsData[selectedPeriod].trips}</AppText>
+              <AppText className="text-sm text-gray-600">Trips</AppText>
             </View>
             <View className="items-center">
-              <Text className="text-2xl font-bold text-gray-900">{earningsData[selectedPeriod].hours}</Text>
-              <Text className="text-sm text-gray-600">Hours</Text>
+              <AppText className="text-2xl font-bold text-gray-900" style={{fontFamily: 'Ubuntu_Bold'}}>{earningsData[selectedPeriod].hours}</AppText>
+              <AppText className="text-sm text-gray-600">Hours</AppText>
             </View>
             <View className="items-center">
-              <Text className="text-2xl font-bold text-gray-900">
+              <AppText className="text-2xl font-bold text-gray-900" style={{fontFamily: 'Ubuntu_Bold'}}>
                 ${(earningsData[selectedPeriod].amount / earningsData[selectedPeriod].hours).toFixed(2)}
-              </Text>
-              <Text className="text-sm text-gray-600">Per Hour</Text>
+              </AppText>
+              <AppText className="text-sm text-gray-600">Per Hour</AppText>
             </View>
           </View>
         </View>
 
         {/* Chart Placeholder */}
         <View className="mx-4 mb-4 bg-white rounded-2xl p-4">
-          <Text className="text-lg font-semibold text-gray-900 mb-4">Earnings Chart</Text>
+          <AppText className="text-lg font-semibold text-gray-900 mb-4" style={{fontFamily: 'Ubuntu_Bold'}}>Earnings Chart</AppText>
           <View className="h-48 bg-gray-100 rounded-xl items-center justify-center">
             <Ionicons name="bar-chart" size={48} color="#9ca3af" />
-            <Text className="text-gray-500 mt-2">Earnings visualization</Text>
+            <AppText className="text-gray-500 mt-2">Earnings visualization</AppText>
           </View>
         </View>
 
         {/* Quick Actions */}
         <View className="mx-4 mb-6">
           <TouchableOpacity className="bg-emerald-500 py-4 rounded-xl mb-3">
-            <Text className="text-white text-center font-semibold text-lg">Cash Out Now</Text>
+            <AppText className="text-white text-center font-semibold text-lg" style={{fontFamily: 'Ubuntu_Bold'}}>Cash Out Now</AppText>
           </TouchableOpacity>
           
           <TouchableOpacity className="bg-white border border-gray-300 py-4 rounded-xl">
-            <Text className="text-gray-700 text-center font-semibold text-lg">View Details</Text>
+            <AppText className="text-gray-700 text-center font-semibold text-lg" style={{fontFamily: 'Ubuntu_Bold'}}>View Details</AppText>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -414,7 +415,7 @@ const DriverSettings = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
           <Ionicons name="arrow-back" size={24} color="#374151" />
         </TouchableOpacity>
-        <Text className="text-xl font-semibold text-gray-900">Settings</Text>
+        <AppText className="text-xl font-semibold text-gray-900" style={{fontFamily: 'Ubuntu_Bold'}}>Settings</AppText>
       </View>
 
       <ScrollView className="flex-1">
@@ -426,9 +427,9 @@ const DriverSettings = ({ navigation }) => {
               className="w-15 h-15 rounded-full mr-4"
             />
             <View className="flex-1">
-              <Text className="text-lg font-semibold text-gray-900">John Driver</Text>
-              <Text className="text-sm text-gray-500">john.driver@email.com</Text>
-              <Text className="text-sm text-emerald-600">★ 4.8 Rating</Text>
+              <AppText className="text-lg font-semibold text-gray-900" style={{fontFamily: 'Ubuntu_Bold'}}>John Driver</AppText>
+              <AppText className="text-sm text-gray-500">john.driver@email.com</AppText>
+              <AppText className="text-sm text-emerald-600">★ 4.8 Rating</AppText>
             </View>
             <TouchableOpacity>
               <Ionicons name="pencil" size={20} color="#10b981" />
@@ -438,12 +439,12 @@ const DriverSettings = ({ navigation }) => {
 
         {/* Preferences */}
         <View className="mx-4 mt-4 bg-white rounded-2xl p-4">
-          <Text className="text-lg font-semibold text-gray-900 mb-4">Preferences</Text>
+          <AppText className="text-lg font-semibold text-gray-900 mb-4" style={{fontFamily: 'Ubuntu_Bold'}}>Preferences</AppText>
           
           <View className="flex-row items-center justify-between py-3 border-b border-gray-100">
             <View className="flex-row items-center">
               <Ionicons name="notifications-outline" size={20} color="#374151" className="mr-3" />
-              <Text className="text-gray-700 ml-3">Push Notifications</Text>
+              <AppText className="text-gray-700 ml-3" style={{fontFamily: 'Ubuntu_Bold'}}>Push Notifications</AppText>
             </View>
             <TouchableOpacity
               onPress={() => setNotifications(!notifications)}
@@ -456,7 +457,7 @@ const DriverSettings = ({ navigation }) => {
           <View className="flex-row items-center justify-between py-3">
             <View className="flex-row items-center">
               <Ionicons name="checkmark-outline" size={20} color="#374151" className="mr-3" />
-              <Text className="text-gray-700 ml-3">Auto Accept Orders</Text>
+              <AppText className="text-gray-700 ml-3" style={{fontFamily: 'Ubuntu_Bold'}}>Auto Accept Orders</AppText>
             </View>
             <TouchableOpacity
               onPress={() => setAutoAccept(!autoAccept)}
@@ -475,7 +476,7 @@ const DriverSettings = ({ navigation }) => {
               className={`flex-row items-center p-4 ${index < settingsOptions.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
               <Ionicons name={option.icon} size={20} color="#374151" />
-              <Text className="text-gray-700 ml-3 flex-1">{option.title}</Text>
+              <AppText className="text-gray-700 ml-3 flex-1" style={{fontFamily: 'Ubuntu_Bold'}}>{option.title}</AppText>
               <Ionicons name="chevron-forward" size={16} color="#9ca3af" />
             </TouchableOpacity>
           ))}
@@ -484,7 +485,7 @@ const DriverSettings = ({ navigation }) => {
         {/* Logout */}
         <View className="mx-4 mt-4 mb-6">
           <TouchableOpacity className="bg-red-50 border border-red-200 py-4 rounded-xl">
-            <Text className="text-red-600 text-center font-semibold text-lg">Sign Out</Text>
+            <AppText className="text-red-600 text-center font-semibold text-lg" style={{fontFamily: 'Ubuntu_Bold'}}>Sign Out</AppText>
           </TouchableOpacity>
         </View>
       </ScrollView>

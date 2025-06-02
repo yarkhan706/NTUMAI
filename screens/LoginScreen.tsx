@@ -39,7 +39,7 @@ const LoginScreen = () => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View className="flex-1 bg-white">
+      <View className="flex-1 bg-white font-ubuntu">
         <StatusBar style="dark" />
 
         <AuthHeader 
@@ -56,7 +56,7 @@ const LoginScreen = () => {
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ flexGrow: 1 }}
           >
-            <View className="flex-1 px-6">
+            <View className="flex-1 px-6 font-ubuntu">
               <AuthMethodTabs 
                 selectedMethod={selectedMethod}
                 onMethodChange={handleMethodChange}

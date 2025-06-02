@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { TextInput, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import AppText from '../../../components/AppText';
 
 interface AuthInputProps {
   method: 'phone' | 'email';
@@ -13,7 +14,7 @@ const AuthInput: React.FC<AuthInputProps> = ({ method, value, onChangeText }) =>
     <View className="w-full flex-row items-center rounded-full px-5 py-5 mb-10 bg-gray-50">
       {method === 'phone' ? (
         <View className="flex-row items-center">
-          <Text className="text-black font-semibold text-base mr-3">+260</Text>
+          <AppText className="text-black font-semibold text-base mr-3">+260</AppText>
           <View className="h-6 w-px bg-gray-300  mr-4" />
         </View>
       ) : (

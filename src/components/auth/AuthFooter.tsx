@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
+import AppText from '../../../components/AppText';
 
 interface AuthFooterProps {
   questionText: string;
@@ -13,12 +14,12 @@ const AuthFooter: React.FC<AuthFooterProps> = ({
   onPress,
 }) => {
   return (
-    <View className="px-6 pb-12">
+    <View className="px-6 pb-12 font-ubuntu">
       <Pressable onPress={onPress}>
-        <Text className="text-gray-600 text-base text-center leading-relaxed">
+        <AppText className="text-gray-600 text-base text-center leading-relaxed">
           {questionText}{' '}
-          <Text className="text-teal-600 font-bold">{actionText}</Text>
-        </Text>
+          <AppText className="text-teal-600 font-ubuntu-medium">{actionText}</AppText>
+        </AppText>
       </Pressable>
     </View>
   );

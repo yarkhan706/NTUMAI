@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Bell, ArrowLeft, Search, Home, Users, ShoppingBag, Car, BarChart } from 'lucide-react-native';
-
+import AppText from '../../components/AppText';
 // Main Admin Dashboard Screen
 const AdminDashboard = ({ navigation }) => {
   const [stats] = useState({
@@ -104,7 +104,7 @@ const AdminDashboard = ({ navigation }) => {
       {/* Header */}
       <View className="bg-white px-4 py-3 border-b border-gray-200">
         <View className="flex-row items-center justify-between">
-          <Text className="text-xl font-bold text-gray-900">Admin Dashboard</Text>
+          <AppText className="text-xl font-bold text-gray-900">Admin Dashboard</AppText>
           <View className="flex-row items-center">
             <TouchableOpacity className="mr-3">
               <Bell size={24} color="#374151" />
@@ -124,7 +124,7 @@ const AdminDashboard = ({ navigation }) => {
         <View className="p-4">
           {dashboardSections.map((section, index) => (
             <View key={index} className="mb-6">
-              <Text className="text-lg font-semibold text-gray-900 mb-4">{section.title}</Text>
+              <AppText className="text-lg font-semibold text-gray-900 mb-4">{section.title}</AppText>
               <View className="flex-row flex-wrap justify-between">
                 {section.items.map((item) => (
                   <TouchableOpacity
@@ -138,11 +138,11 @@ const AdminDashboard = ({ navigation }) => {
                         className="w-12 h-12 rounded-full mr-3"
                       />
                       <View className="flex-1">
-                        <Text className="text-white text-base font-medium">{item.name}</Text>
+                        <AppText className="text-white text-base font-medium">{item.name}</AppText>
                         <View className={`px-2 py-1 rounded-full ${getStatusColor(item.status)} mt-1`}>
-                          <Text className="text-xs font-medium">
+                          <AppText className="text-xs font-medium">
                             {item.status.toUpperCase()}
-                          </Text>
+                          </AppText>
                         </View>
                       </View>
                     </View>
@@ -150,7 +150,7 @@ const AdminDashboard = ({ navigation }) => {
                 ))}
               </View>
               {section.items.length === 0 && (
-                <Text className="text-gray-600 text-center">No items available</Text>
+                <AppText className="text-gray-600 text-center">No items available</AppText>
               )}
             </View>
           ))}
@@ -158,19 +158,19 @@ const AdminDashboard = ({ navigation }) => {
 
         {/* Quick Actions */}
         <View className="px-4 mb-6">
-          <Text className="text-lg font-semibold text-gray-900 mb-4">Admin Orders Management</Text>
+          <AppText className="text-lg font-semibold text-gray-900 mb-4">Admin Orders Management</AppText>
           <View className="flex-row flex-wrap justify-between">
             <TouchableOpacity
               className="w-[48%] bg-teal-600 py-3 rounded-xl mb-3"
               onPress={() => navigation.navigate('OrderManagement')}
             >
-              <Text className="text-white text-center font-semibold">Manage Orders</Text>
+              <AppText className="text-white text-center font-semibold">Manage Orders</AppText>
             </TouchableOpacity>
             <TouchableOpacity
               className="w-[48%] bg-teal-600 py-3 rounded-xl mb-3"
               onPress={() => navigation.navigate('ManagePayments')}
             >
-              <Text className="text-white text-center font-semibold">Manage Payments</Text>
+              <AppText className="text-white text-center font-semibold">Manage Payments</AppText>
             </TouchableOpacity>
           </View>
         </View>
@@ -217,7 +217,7 @@ const UserManagement = ({ navigation, route }) => {
           <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
             <ArrowLeft size={24} color="#374151" />
           </TouchableOpacity>
-          <Text className="text-xl font-semibold text-gray-900">User Management</Text>
+          <AppText className="text-xl font-semibold text-gray-900">User Management</AppText>
         </View>
       </View>
 
@@ -247,11 +247,11 @@ const UserManagement = ({ navigation, route }) => {
                 selectedFilter === filter ? 'bg-teal-600' : 'bg-gray-200'
               }`}
             >
-              <Text className={`capitalize font-medium ${
+              <AppText className={`capitalize font-medium ${
                 selectedFilter === filter ? 'text-white' : 'text-gray-700'
               }`}>
                 {filter}
-              </Text>
+              </AppText>
             </TouchableOpacity>
           ))}
         </ScrollView>
@@ -265,21 +265,21 @@ const UserManagement = ({ navigation, route }) => {
               <Image source={{ uri: user.avatar }} className="w-12 h-12 rounded-full mr-3" />
               <View className="flex-1">
                 <View className="flex-row items-center justify-between mb-1">
-                  <Text className="text-lg font-semibold text-white">{user.name}</Text>
+                  <AppText className="text-lg font-semibold text-white">{user.name}</AppText>
                   <View className={`px-2 py-1 rounded-full ${
                     user.status === 'active' ? 'bg-green-100' :
                     user.status === 'suspended' ? 'bg-red-100' : 'bg-gray-100'
                   }`}>
-                    <Text className={`text-xs font-medium ${
+                    <AppText className={`text-xs font-medium ${
                       user.status === 'active' ? 'text-green-800' :
                       user.status === 'suspended' ? 'text-red-800' : 'text-gray-800'
                     }`}>
                       {user.status.toUpperCase()}
-                    </Text>
+                    </AppText>
                   </View>
                 </View>
-                <Text className="text-gray-200 mb-1">{user.email}</Text>
-                <Text className="text-sm text-gray-300">{user.orders} orders • Joined {user.joined}</Text>
+                <AppText className="text-gray-200 mb-1">{user.email}</AppText>
+                <AppText className="text-sm text-gray-300">{user.orders} orders • Joined {user.joined}</AppText>
               </View>
             </View>
 
@@ -288,21 +288,21 @@ const UserManagement = ({ navigation, route }) => {
                 className="bg-blue-100 px-3 py-1 rounded-lg mr-2"
                 onPress={() => alert(`Viewing details for ${user.name}`)}
               >
-                <Text className="text-blue-600 font-medium">View</Text>
+                <AppText className="text-blue-600 font-medium">View</AppText>
               </TouchableOpacity>
               {user.status === 'active' ? (
                 <TouchableOpacity
                   className="bg-red-100 px-3 py-1 rounded-lg"
                   onPress={() => handleUserAction(user.id, 'suspend')}
                 >
-                  <Text className="text-red-600 font-medium">Suspend</Text>
+                  <AppText className="text-red-600 font-medium">Suspend</AppText>
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity
                   className="bg-green-100 px-3 py-1 rounded-lg"
                   onPress={() => handleUserAction(user.id, 'activate')}
                 >
-                  <Text className="text-green-600 font-medium">Activate</Text>
+                  <AppText className="text-green-600 font-medium">Activate</AppText>
                 </TouchableOpacity>
               )}
             </View>
@@ -358,7 +358,7 @@ const OrderManagement = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
             <ArrowLeft size={24} color="#374151" />
           </TouchableOpacity>
-          <Text className="text-xl font-semibold text-gray-900">Order Management</Text>
+          <AppText className="text-xl font-semibold text-gray-900">Order Management</AppText>
         </View>
       </View>
 
@@ -373,11 +373,11 @@ const OrderManagement = ({ navigation }) => {
                 selectedFilter === filter ? 'bg-teal-600' : 'bg-gray-200'
               }`}
             >
-              <Text className={`capitalize font-medium ${
+              <AppText className={`capitalize font-medium ${
                 selectedFilter === filter ? 'text-white' : 'text-gray-700'
               }`}>
                 {filter.replace('_', ' ')}
-              </Text>
+              </AppText>
             </TouchableOpacity>
           ))}
         </ScrollView>
@@ -390,36 +390,36 @@ const OrderManagement = ({ navigation }) => {
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-1">
                 <View className="flex-row items-center justify-between mb-1">
-                  <Text className="text-lg font-bold text-white">{order.id}</Text>
+                  <AppText className="text-lg font-bold text-white">{order.id}</AppText>
                   <View className={`px-2 py-1 rounded-full ${getStatusColor(order.status)}`}>
-                    <Text className="text-xs font-medium">
+                    <AppText className="text-xs font-medium">
                       {order.status.replace('_', ' ').toUpperCase()}
-                    </Text>
+                    </AppText>
                   </View>
                 </View>
-                <Text className="text-gray-200">{order.customer}</Text>
-                <Text className="text-sm text-gray-300">{order.vendor} • {order.items} items</Text>
+                <AppText className="text-gray-200">{order.customer}</AppText>
+                <AppText className="text-sm text-gray-300">{order.vendor} • {order.items} items</AppText>
               </View>
             </View>
 
             <View className="flex-row items-center justify-between">
               <View>
-                <Text className="text-xl font-bold text-white">${order.amount}</Text>
-                <Text className="text-sm text-gray-300">{order.time}</Text>
+                <AppText className="text-xl font-bold text-white">${order.amount}</AppText>
+                <AppText className="text-sm text-gray-300">{order.time}</AppText>
               </View>
               <View className="flex-row">
                 <TouchableOpacity
                   className="bg-blue-100 px-3 py-1 rounded-lg mr-2"
                   onPress={() => alert(`Viewing details for ${order.id}`)}
                 >
-                  <Text className="text-blue-600 font-medium">Details</Text>
+                  <AppText className="text-blue-600 font-medium">Details</AppText>
                 </TouchableOpacity>
                 {order.status === 'pending' && (
                   <TouchableOpacity
                     className="bg-red-100 px-3 py-1 rounded-lg"
                     onPress={() => handleOrderAction(order.id, 'cancel')}
                   >
-                    <Text className="text-red-600 font-medium">Cancel</Text>
+                    <AppText className="text-red-600 font-medium">Cancel</AppText>
                   </TouchableOpacity>
                 )}
               </View>
@@ -470,7 +470,7 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
             <ArrowLeft size={24} color="#374151" />
           </TouchableOpacity>
-          <Text className="text-xl font-semibold text-gray-900">Delivery Personnel</Text>
+          <AppText className="text-xl font-semibold text-gray-900">Delivery Personnel</AppText>
         </View>
       </View>
 
@@ -485,11 +485,11 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
                 selectedFilter === filter ? 'bg-teal-600' : 'bg-gray-200'
               }`}
             >
-              <Text className={`capitalize font-medium ${
+              <AppText className={`capitalize font-medium ${
                 selectedFilter === filter ? 'text-white' : 'text-gray-700'
               }`}>
                 {filter}
-              </Text>
+              </AppText>
             </TouchableOpacity>
           ))}
         </ScrollView>
@@ -502,41 +502,41 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-1">
                 <View className="flex-row items-center justify-between mb-1">
-                  <Text className="text-lg font-semibold text-white">{driver.name}</Text>
+                  <AppText className="text-lg font-semibold text-white">{driver.name}</AppText>
                   <View className={`px-2 py-1 rounded-full ${
                     driver.status === 'online' ? 'bg-green-100' :
                     driver.status === 'offline' ? 'bg-gray-100' :
                     driver.status === 'pending' ? 'bg-yellow-100' :
                     driver.status === 'suspended' ? 'bg-red-100' : 'bg-gray-100'
                   }`}>
-                    <Text className={`text-xs font-medium ${
+                    <AppText className={`text-xs font-medium ${
                       driver.status === 'online' ? 'text-green-800' :
                       driver.status === 'offline' ? 'text-gray-800' :
                       driver.status === 'pending' ? 'text-yellow-800' :
                       driver.status === 'suspended' ? 'text-red-800' : 'text-gray-800'
                     }`}>
                       {driver.status.toUpperCase()}
-                    </Text>
+                    </AppText>
                   </View>
                 </View>
-                <Text className="text-gray-200 mb-1">{driver.email}</Text>
-                <Text className="text-sm text-gray-300">{driver.phone} • {driver.vehicle}</Text>
+                <AppText className="text-gray-200 mb-1">{driver.email}</AppText>
+                <AppText className="text-sm text-gray-300">{driver.phone} • {driver.vehicle}</AppText>
               </View>
             </View>
 
             {driver.status !== 'pending' && (
               <View className="flex-row justify-between mb-3 py-2 bg-gray-100 rounded-lg px-3">
                 <View className="items-center">
-                  <Text className="text-lg font-bold text-gray-900">★ {driver.rating}</Text>
-                  <Text className="text-xs text-gray-500">Rating</Text>
+                  <AppText className="text-lg font-bold text-gray-900">★ {driver.rating}</AppText>
+                  <AppText className="text-xs text-gray-500">Rating</AppText>
                 </View>
                 <View className="items-center">
-                  <Text className="text-lg font-bold text-gray-900">{driver.deliveries}</Text>
-                  <Text className="text-xs text-gray-500">Deliveries</Text>
+                  <AppText className="text-lg font-bold text-gray-900">{driver.deliveries}</AppText>
+                  <AppText className="text-xs text-gray-500">Deliveries</AppText>
                 </View>
                 <View className="items-center">
-                  <Text className="text-lg font-bold text-gray-900">${driver.earnings}</Text>
-                  <Text className="text-xs text-gray-500">Earnings</Text>
+                  <AppText className="text-lg font-bold text-gray-900">${driver.earnings}</AppText>
+                  <AppText className="text-xs text-gray-500">Earnings</AppText>
                 </View>
               </View>
             )}
@@ -546,7 +546,7 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
                 className="bg-blue-100 px-3 py-1 rounded-lg mr-2"
                 onPress={() => alert(`Viewing details for ${driver.name}`)}
               >
-                <Text className="text-blue-600 font-medium">View</Text>
+                <AppText className="text-blue-600 font-medium">View</AppText>
               </TouchableOpacity>
 
               {driver.status === 'pending' && (
@@ -555,13 +555,13 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
                     className="bg-red-100 px-3 py-1 rounded-lg mr-2"
                     onPress={() => handleDriverAction(driver.id, 'reject')}
                   >
-                    <Text className="text-red-600 font-medium">Reject</Text>
+                    <AppText className="text-red-600 font-medium">Reject</AppText>
                   </TouchableOpacity>
                   <TouchableOpacity
                     className="bg-teal-100 px-3 py-1 rounded-lg"
                     onPress={() => handleDriverAction(driver.id, 'approve')}
                   >
-                    <Text className="text-teal-600 font-medium">Approve</Text>
+                    <AppText className="text-teal-600 font-medium">Approve</AppText>
                   </TouchableOpacity>
                 </>
               )}
@@ -571,7 +571,7 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
                   className="bg-red-100 px-3 py-1 rounded-lg"
                   onPress={() => handleDriverAction(driver.id, 'suspend')}
                 >
-                  <Text className="text-red-600 font-medium">Suspend</Text>
+                  <AppText className="text-red-600 font-medium">Suspend</AppText>
                 </TouchableOpacity>
               )}
 
@@ -580,7 +580,7 @@ const DeliveryPersonnelManagement = ({ navigation }) => {
                   className="bg-green-100 px-3 py-1 rounded-lg"
                   onPress={() => handleDriverAction(driver.id, 'activate')}
                 >
-                  <Text className="text-green-600 font-medium">Activate</Text>
+                  <AppText className="text-green-600 font-medium">Activate</AppText>
                 </TouchableOpacity>
               )}
             </View>
@@ -623,7 +623,7 @@ const Analytics = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.goBack()} className="mr-3">
             <ArrowLeft size={24} color="#374151" />
           </TouchableOpacity>
-          <Text className="text-xl font-semibold text-gray-900">Analytics</Text>
+          <AppText className="text-xl font-semibold text-gray-900">Analytics</AppText>
         </View>
       </View>
 
@@ -638,21 +638,21 @@ const Analytics = ({ navigation }) => {
                 selectedPeriod === period ? 'bg-teal-600' : 'bg-gray-200'
               }`}
             >
-              <Text className={`text-center capitalize font-medium ${
+              <AppText className={`text-center capitalize font-medium ${
                 selectedPeriod === period ? 'text-white' : 'text-gray-700'
               }`}>
                 {period}
-              </Text>
+              </AppText>
             </TouchableOpacity>
           ))}
         </View>
 
         {/* Revenue Card */}
         <View className="bg-teal-600 rounded-xl p-4 mb-4">
-          <Text className="text-lg font-semibold text-white mb-2">Revenue</Text>
+          <AppText className="text-lg font-semibold text-white mb-2">Revenue</AppText>
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-2xl font-bold text-white">${analyticsData.revenue.total}</Text>
-            <Text className="text-green-400 font-medium">{analyticsData.revenue.change}</Text>
+            <AppText className="text-2xl font-bold text-white">${analyticsData.revenue.total}</AppText>
+            <AppText className="text-green-400 font-medium">{analyticsData.revenue.change}</AppText>
           </View>
           <View className="flex-row justify-between">
             {analyticsData.revenue.chart.map((value, index) => (
@@ -661,9 +661,9 @@ const Analytics = ({ navigation }) => {
                   className="bg-teal-400 rounded-t-lg w-4"
                   style={{ height: value * 2 }}
                 />
-                <Text className="text-xs text-gray-300 mt-1">
+                <AppText className="text-xs text-gray-300 mt-1">
                   {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][index]}
-                </Text>
+                </AppText>
               </View>
             ))}
           </View>
@@ -671,10 +671,10 @@ const Analytics = ({ navigation }) => {
 
         {/* Orders Card */}
         <View className="bg-teal-600 rounded-xl p-4 mb-4">
-          <Text className="text-lg font-semibold text-white mb-2">Orders</Text>
+          <AppText className="text-lg font-semibold text-white mb-2">Orders</AppText>
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-2xl font-bold text-white">{analyticsData.orders.total}</Text>
-            <Text className="text-green-400 font-medium">{analyticsData.orders.change}</Text>
+            <AppText className="text-2xl font-bold text-white">{analyticsData.orders.total}</AppText>
+            <AppText className="text-green-400 font-medium">{analyticsData.orders.change}</AppText>
           </View>
           <View className="flex-row justify-between">
             {analyticsData.orders.chart.map((value, index) => (
@@ -683,9 +683,9 @@ const Analytics = ({ navigation }) => {
                   className="bg-teal-400 rounded-t-lg w-4"
                   style={{ height: value }}
                 />
-                <Text className="text-xs text-gray-300 mt-1">
+                <AppText className="text-xs text-gray-300 mt-1">
                   {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][index]}
-                </Text>
+                </AppText>
               </View>
             ))}
           </View>
@@ -693,12 +693,12 @@ const Analytics = ({ navigation }) => {
 
         {/* Users Card */}
         <View className="bg-teal-600 rounded-xl p-4">
-          <Text className="text-lg font-semibold text-white mb-2">Users</Text>
+          <AppText className="text-lg font-semibold text-white mb-2">Users</AppText>
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-2xl font-bold text-white">{analyticsData.users.total}</Text>
-            <Text className="text-green-400 font-medium">{analyticsData.users.change}</Text>
+            <AppText className="text-2xl font-bold text-white">{analyticsData.users.total}</AppText>
+            <AppText className="text-green-400 font-medium">{analyticsData.users.change}</AppText>
           </View>
-          <Text className="text-gray-300">New Users: {analyticsData.users.new}</Text>
+          <AppText className="text-gray-300">New Users: {analyticsData.users.new}</AppText>
         </View>
       </ScrollView>
     </SafeAreaView>

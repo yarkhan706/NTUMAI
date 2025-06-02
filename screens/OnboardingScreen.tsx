@@ -20,10 +20,10 @@ const OnboardingScreen = () => {
           className="w-70 h-64 mb-6"
           resizeMode="contain"
         />
-        <Text className="text-teal-700 text-4xl font-bold text-left mb-4">
+        <Text className="text-teal-700 text-4xl font-bold text-left mb-4 font-ubuntu">
           Quick Deliveries at your fingertips
         </Text>
-        <Text className="text-gray-600 text-base text-left mb-6">
+        <Text className="text-gray-600 text-base text-left mb-6 font-ubuntu">
           Find your favorite Meals at the best prices with exclusive deals only on alimnts app.
         </Text>
       </View>
@@ -51,13 +51,13 @@ const OnboardingScreen = () => {
           <Button
             title="Login"
             onPress={() => navigation.navigate('Login')}
-            className="text-black bg-white"
+            className="text-black bg-white font-ubuntu-bold"
           />
           <Pressable
             className="bg-black w-full py-4 rounded-lg"
             onPress={() => navigation.navigate('SelectMethod')}
           >
-            <Text className="text-white text-center text-lg font-semibold">Create an account</Text>
+            <Text className="text-white text-center text-lg font-semibold font-ubuntu-bold">Create an account</Text>
           </Pressable>
         </View>
       </View>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable, Text } from 'react-native';
+import AppText from '../../../components/AppText';
 
 interface AuthButtonProps {
   title: string;
@@ -14,10 +15,10 @@ const AuthButton: React.FC<AuthButtonProps> = ({
 }) => {
   return (
     <Pressable
-      className={`w-full py-5 rounded-2xl bg-teal-600 elevation-1 ${className}`}
+      className={`w-full py-5 rounded-2xl bg-teal-600 font-ubuntu elevation-1 ${className}`}
       onPress={onPress}
     >
-      <Text className="text-white text-center text-lg font-bold">{title}</Text>
+      <AppText className="text-white text-center text-lg font-bold">{title}</AppText>
     </Pressable>
   );
 };

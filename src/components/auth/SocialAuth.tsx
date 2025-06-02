@@ -1,6 +1,7 @@
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import AppText from '../../../components/AppText';  
 
 const SocialAuth: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const SocialAuth: React.FC = () => {
       {/* Divider */}
       <View className="flex-row items-center mb-10">
         <View className="flex-1 h-px bg-gray-200" />
-        <Text className="mx-6 text-gray-400 text-sm font-medium tracking-wide">OR</Text>
+        <AppText className="mx-6 text-gray-400 text-sm font-medium tracking-wide">OR</AppText>
         <View className="flex-1 h-px bg-gray-200" />
       </View>
 

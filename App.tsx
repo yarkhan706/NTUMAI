@@ -20,6 +20,7 @@ import { CartScreen, ProductDetailScreen, RestaurantDetailScreen } from './scree
 import {CheckoutScreen,OrderTrackingScreen,RateOrderScreen } from './screens/checkout/CheckoutScreen';
 import AdminDashboardNavigator from './screens/admin/AdminDashbooard';
 import VendorTabs from './screens/vendor/VendorTabs';
+import AppText from './components/AppText';
 
 // Keep splash screen visible while loading fonts
 SplashScreen.preventAutoHideAsync();
@@ -73,7 +74,7 @@ export default function App() {
   }
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaProvider>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>

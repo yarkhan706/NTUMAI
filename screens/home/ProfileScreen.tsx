@@ -26,6 +26,7 @@ import {
   MapPin,
   Calendar
 } from 'lucide-react-native';
+import AppText from '../../components/AppText';
 
 interface ProfileData {
   name: string;
@@ -167,9 +168,9 @@ export default function ProfileScreen() {
           <View className="w-10 h-10 bg-gray-100 rounded-full items-center justify-center mr-4">
             <IconComponent size={20} color="#6B7280" />
           </View>
-          <Text className="text-base font-medium text-gray-800 flex-1">
+          <AppText className="text-base font-medium text-gray-800 flex-1" style={{fontFamily: 'Ubuntu_Bold'}}>
             {item.title}
-          </Text>
+          </AppText>
         </View>
         
         {item.type === 'toggle' && (
@@ -192,7 +193,7 @@ export default function ProfileScreen() {
     <ScrollView className="flex-1 bg-gray-50">
       {/* Header */}
       <View className="bg-teal-500 pt-12 pb-8 px-6">
-        <Text className="text-white text-2xl font-bold text-center">Profile</Text>
+        <AppText className="text-white text-2xl font-bold text-center" style={{fontFamily: 'Ubuntu_Bold'}}>Profile</AppText>
       </View>
 
       {/* Profile Card */}
@@ -214,12 +215,12 @@ export default function ProfileScreen() {
             </TouchableOpacity>
           </View>
           
-          <Text className="text-xl font-bold text-gray-800 mt-4">
+          <AppText className="text-xl font-bold text-gray-800 mt-4" style={{fontFamily: 'Ubuntu_Bold'}}>
             {profileData.name}
-          </Text>
-          <Text className="text-gray-500 text-sm mt-1">
+          </AppText>
+          <AppText className="text-gray-500 text-sm mt-1" style={{fontFamily: 'Ubuntu_Medium'}}>
             {profileData.joinDate}
-          </Text>
+          </AppText>
         </View>
 
         {/* Profile Info */}
@@ -232,10 +233,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <User size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Bio</Text>
-                <Text className="text-base text-gray-800" numberOfLines={2}>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Bio</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
                   {profileData.bio}
-                </Text>
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -249,8 +250,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <Settings size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Occupation</Text>
-                <Text className="text-base text-gray-800">{profileData.occupation}</Text>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Occupation</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
+                  {profileData.occupation}
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -264,8 +267,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <Settings size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Company</Text>
-                <Text className="text-base text-gray-800">{profileData.company}</Text>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Company</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
+                  {profileData.company}
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -279,8 +284,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <Mail size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Email</Text>
-                <Text className="text-base text-gray-800">{profileData.email}</Text>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Email</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
+                  {profileData.email}
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -294,8 +301,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <Phone size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Phone</Text>
-                <Text className="text-base text-gray-800">{profileData.phone}</Text>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Phone</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
+                  {profileData.phone}
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -309,8 +318,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <MapPin size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Location</Text>
-                <Text className="text-base text-gray-800">{profileData.location}</Text>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Location</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
+                  {profileData.location}
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -324,8 +335,10 @@ export default function ProfileScreen() {
             <View className="flex-row items-center flex-1">
               <Calendar size={20} color="#6B7280" />
               <View className="ml-3 flex-1">
-                <Text className="text-sm text-gray-500">Date of Birth</Text>
-                <Text className="text-base text-gray-800">{profileData.dateOfBirth}</Text>
+                <AppText className="text-sm text-gray-500" style={{fontFamily: 'Ubuntu_Medium'}}>Date of Birth</AppText>
+                <AppText className="text-base text-gray-800" numberOfLines={2} style={{fontFamily: 'Ubuntu_Medium'}}>
+                  {profileData.dateOfBirth}
+                </AppText>
               </View>
             </View>
             <Edit3 size={16} color="#9CA3AF" />
@@ -335,9 +348,9 @@ export default function ProfileScreen() {
 
       {/* Settings Section */}
       <View className="mt-6 mb-8">
-        <Text className="text-lg font-semibold text-gray-800 px-6 mb-4">
+        <AppText className="text-lg font-semibold text-gray-800 px-6 mb-4" style={{fontFamily: 'Ubuntu_Bold'}}>
           Settings
-        </Text>
+        </AppText>
         <View className="bg-white mx-4 rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           {settingsItems.map(renderSettingsItem)}
         </View>
@@ -352,9 +365,9 @@ export default function ProfileScreen() {
       >
         <View className="flex-1 bg-black/50 justify-end">
           <View className="bg-white rounded-t-3xl p-6">
-            <Text className="text-xl font-bold text-gray-800 mb-6 text-center">
+            <AppText className="text-xl font-bold text-gray-800 mb-6 text-center" style={{fontFamily: 'Ubuntu_Bold'}}>
               Edit {editingField?.charAt(0).toUpperCase() + editingField?.slice(1)}
-            </Text>
+            </AppText>
             
             <TextInput
               className="border border-gray-300 rounded-xl px-4 py-3 text-base mb-6"
@@ -373,9 +386,9 @@ export default function ProfileScreen() {
                 onPress={() => setEditModalVisible(false)}
                 activeOpacity={0.8}
               >
-                <Text className="text-center font-semibold text-gray-700">
+                <AppText className="text-center font-semibold text-gray-700" style={{fontFamily: 'Ubuntu_Bold'}}>
                   Cancel
-                </Text>
+                </AppText>
               </TouchableOpacity>
               
               <TouchableOpacity
@@ -383,9 +396,9 @@ export default function ProfileScreen() {
                 onPress={saveEdit}
                 activeOpacity={0.8}
               >
-                <Text className="text-center font-semibold text-white">
+                <AppText className="text-center font-semibold text-white" style={{fontFamily: 'Ubuntu_Bold'}}>
                   Save
-                </Text>
+                </AppText>
               </TouchableOpacity>
             </View>
           </View>
@@ -402,16 +415,22 @@ export default function ProfileScreen() {
         <View className="flex-1 bg-black/50 justify-end">
           <View className="bg-white rounded-t-3xl p-6 max-h-96">
             <View className="flex-row items-center justify-between mb-6">
-              <Text className="text-xl font-bold text-gray-800">App Settings</Text>
+              <AppText className="text-xl font-bold text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                App Settings
+              </AppText>
               <TouchableOpacity onPress={() => setSettingsModalVisible(false)}>
-                <Text className="text-teal-500 font-semibold">Done</Text>
+                <AppText className="text-teal-500 font-semibold" style={{fontFamily: 'Ubuntu_Bold'}}>
+                  Done
+                </AppText>
               </TouchableOpacity>
             </View>
             
             <ScrollView showsVerticalScrollIndicator={false}>
               <View className="space-y-4">
                 <View className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Dark Mode</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Dark Mode
+                  </AppText>
                   <Switch
                     value={darkMode}
                     onValueChange={setDarkMode}
@@ -421,7 +440,9 @@ export default function ProfileScreen() {
                 </View>
                 
                 <View className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Auto-sync Data</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Auto-sync Data
+                  </AppText>
                   <Switch
                     value={true}
                     onValueChange={() => {}}
@@ -431,23 +452,39 @@ export default function ProfileScreen() {
                 </View>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Language</Text>
-                  <Text className="text-gray-500">English</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Language
+                  </AppText>
+                  <AppText className="text-gray-500" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    English
+                  </AppText>
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Storage</Text>
-                  <Text className="text-gray-500">2.4 GB</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Storage
+                  </AppText>
+                  <AppText className="text-gray-500" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    2.4 GB
+                  </AppText>
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Cache</Text>
-                  <Text className="text-teal-500">Clear</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Cache
+                  </AppText>
+                  <AppText className="text-teal-500" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Clear
+                  </AppText>
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">App Version</Text>
-                  <Text className="text-gray-500">v2.1.0</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    App Version
+                  </AppText>
+                  <AppText className="text-gray-500" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    v2.1.0
+                  </AppText>
                 </TouchableOpacity>
               </View>
             </ScrollView>
@@ -465,16 +502,22 @@ export default function ProfileScreen() {
         <View className="flex-1 bg-black/50 justify-end">
           <View className="bg-white rounded-t-3xl p-6 max-h-96">
             <View className="flex-row items-center justify-between mb-6">
-              <Text className="text-xl font-bold text-gray-800">Privacy & Security</Text>
+              <AppText className="text-xl font-bold text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                Privacy & Security
+              </AppText>
               <TouchableOpacity onPress={() => setPrivacyModalVisible(false)}>
-                <Text className="text-teal-500 font-semibold">Done</Text>
+                <AppText className="text-teal-500 font-semibold" style={{fontFamily: 'Ubuntu_Bold'}}>
+                  Done
+                </AppText>
               </TouchableOpacity>
             </View>
             
             <ScrollView showsVerticalScrollIndicator={false}>
               <View className="space-y-4">
                 <View className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Face ID / Touch ID</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Face ID / Touch ID
+                  </AppText>
                   <Switch
                     value={faceId}
                     onValueChange={setFaceId}
@@ -484,7 +527,9 @@ export default function ProfileScreen() {
                 </View>
                 
                 <View className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Location Access</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Location Access
+                  </AppText>
                   <Switch
                     value={locationAccess}
                     onValueChange={setLocationAccess}
@@ -494,7 +539,9 @@ export default function ProfileScreen() {
                 </View>
                 
                 <View className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Data Sharing</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Data Sharing
+                  </AppText>
                   <Switch
                     value={dataSharing}
                     onValueChange={setDataSharing}
@@ -504,22 +551,32 @@ export default function ProfileScreen() {
                 </View>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Change Password</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Change Password
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Two-Factor Authentication</Text>
-                  <Text className="text-green-500">Enabled</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Two-Factor Authentication
+                  </AppText>
+                  <AppText className="text-green-500" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Enabled
+                  </AppText>
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Privacy Policy</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Privacy Policy
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Data Export</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Data Export
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
               </View>
@@ -538,47 +595,67 @@ export default function ProfileScreen() {
         <View className="flex-1 bg-black/50 justify-end">
           <View className="bg-white rounded-t-3xl p-6 max-h-96">
             <View className="flex-row items-center justify-between mb-6">
-              <Text className="text-xl font-bold text-gray-800">Help & Support</Text>
+              <AppText className="text-xl font-bold text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                Help & Support
+              </AppText>
               <TouchableOpacity onPress={() => setHelpModalVisible(false)}>
-                <Text className="text-teal-500 font-semibold">Done</Text>
+                <AppText className="text-teal-500 font-semibold" style={{fontFamily: 'Ubuntu_Bold'}}>
+                  Done
+                </AppText>
               </TouchableOpacity>
             </View>
             
             <ScrollView showsVerticalScrollIndicator={false}>
               <View className="space-y-4">
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">FAQ</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    FAQ
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Contact Support</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Contact Support
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Report a Bug</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Report a Bug
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Feature Request</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Feature Request
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Community Guidelines</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Community Guidelines
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <TouchableOpacity className="flex-row items-center justify-between py-3">
-                  <Text className="text-base text-gray-800">Terms of Service</Text>
+                  <AppText className="text-base text-gray-800" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    Terms of Service
+                  </AppText>
                   <ChevronRight size={20} color="#9CA3AF" />
                 </TouchableOpacity>
                 
                 <View className="py-3 border-t border-gray-200 mt-4">
-                  <Text className="text-sm text-gray-500 text-center mb-2">App Version 2.1.0</Text>
-                  <Text className="text-sm text-gray-500 text-center">© 2023 Your App Name</Text>
+                  <AppText className="text-sm text-gray-500 text-center mb-2" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    App Version 2.1.0
+                  </AppText>
+                  <AppText className="text-sm text-gray-500 text-center" style={{fontFamily: 'Ubuntu_Bold'}}>
+                    © 2023 Your App Name
+                  </AppText>
                 </View>
               </View>
             </ScrollView>

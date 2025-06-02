@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pressable, Text, View,StyleSheet } from 'react-native';
+import { Pressable, View,StyleSheet } from 'react-native';
+import AppText from '../../../components/AppText';
 
 const styles = StyleSheet.create({
   container:{
@@ -31,13 +32,13 @@ const AuthMethodTabs: React.FC<AuthMethodTabsProps> = ({
         }`}
         onPress={() => onMethodChange('phone')}
         style={styles.container}>
-        <Text
+        <AppText
           className={`text-base font-semibold ${
             selectedMethod === 'phone' ? 'text-teal-600' : 'text-gray-500'
           }`}
         >
           Phone Number
-        </Text>
+        </AppText>
       </Pressable>
       <Pressable
         className={`flex-1 py-4 rounded-full items-center ${
@@ -46,13 +47,13 @@ const AuthMethodTabs: React.FC<AuthMethodTabsProps> = ({
         onPress={() => onMethodChange('email')}
         style={styles.container}
       > 
-        <Text
+        <AppText
           className={`text-base font-semibold ${
             selectedMethod === 'email' ? 'text-teal-600' : 'text-gray-500'
           }`}
         >
           Email
-        </Text>
+        </AppText>
       </Pressable>
     </View>
   );

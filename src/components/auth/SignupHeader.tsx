@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import AppText from '../../../components/AppText';
 
 interface SignupHeaderProps {
   title: string;
@@ -14,15 +15,11 @@ const SignupHeader: React.FC<SignupHeaderProps> = ({
 }) => {
   return (
     <View className="px-6 pt-20 pb-6">
-      <Text className="text-teal-600 text-5xl font-bold mb-1 leading-tight">
-        {title}
-      </Text>
-      <Text className="text-teal-600 text-2xl font-medium">
-        {subtitle}
-      </Text>
-      <Text className="text-gray-700 text-base mt-4 leading-relaxed">
+      <AppText className="text-teal-600 text-5xl font-ubuntu-bold mb-1 leading-tight" style={{ fontFamily: 'Ubuntu-Bold' }}>{title}</AppText>
+      <AppText className="text-teal-600 text-2xl font-ubuntu-medium" style={{ fontFamily: 'Ubuntu-Medium' }}>{subtitle}</AppText>
+      <AppText className="text-gray-700 text-base mt-4 leading-relaxed" style={{ fontFamily: 'Ubuntu-Regular' }}>
         {description}
-      </Text>
+      </AppText>
     </View>
   );
 };
