@@ -1,7 +1,8 @@
 // VendorTabs.tsx - Main Vendor Navigation
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text } from 'react-native';
+import { View, Text,  } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { VendorDashboard } from './VendorDashboard';
 import { VendorProducts } from './VendorProducts';
@@ -13,6 +14,7 @@ const Tab = createBottomTabNavigator();
 
 export default function VendorTabs() {
   return (
+    <SafeAreaView className='flex-1'>
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -57,5 +59,6 @@ export default function VendorTabs() {
       <Tab.Screen name="Notifications" component={VendorNotifications} />
       <Tab.Screen name="Profile" component={VendorProfile} />
     </Tab.Navigator>
+    </SafeAreaView>
   );
 }

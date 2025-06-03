@@ -498,6 +498,7 @@ const Tab = createBottomTabNavigator();
 
 const DriverHome = () => {
   return (
+    <SafeAreaView className="flex-1">
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -535,6 +536,7 @@ const DriverHome = () => {
       <Tab.Screen name="Earnings" component={DriverEarnings} />
       <Tab.Screen name="Settings" component={DriverSettings} />
     </Tab.Navigator>
+    </SafeAreaView>
   );
 };
 

@@ -61,10 +61,16 @@
           "weight": "medium",
           "style": "normal"
         }
-      ]
+      ],
+      "package": "com.yarkhan706.NTUMAI"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "caefb58c-d89b-49ea-93f4-41ba920005b3"
+      }
     }
   }
 }

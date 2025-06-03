@@ -11,7 +11,7 @@ import OtpInputScreen from './screens/OtpInputScreen';
 import LoginScreen from './screens/LoginScreen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import './global.css';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import ContinueSignUpScreen from './screens/ContinueSignUpScreen';
 import ContinueBoardingScreen from './screens/ContinueBoarding';
 import HomeTabs from './screens/home/HomeTabs';
@@ -75,7 +75,8 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{flex: 1}} >
+        <SafeAreaView style={{flex: 1}}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Splash" component={SplashScreenComponent} />
@@ -212,6 +213,7 @@ export default function App() {
 
           </Stack.Navigator>
         </NavigationContainer>
+        </SafeAreaView>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

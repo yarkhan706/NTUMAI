@@ -28,10 +28,10 @@ const AuthMethodTabs: React.FC<AuthMethodTabsProps> = ({
     style={styles.container}>
       <Pressable
         className={`flex-1 py-4 rounded-full items-center ${
-          selectedMethod === 'phone' ? 'bg-white elevation-2' : ''
+          selectedMethod === 'phone' ? 'bg-white' : ''
         }`}
         onPress={() => onMethodChange('phone')}
-        style={styles.container}>
+       >
         <AppText
           className={`text-base font-semibold ${
             selectedMethod === 'phone' ? 'text-teal-600' : 'text-gray-500'
@@ -42,11 +42,10 @@ const AuthMethodTabs: React.FC<AuthMethodTabsProps> = ({
       </Pressable>
       <Pressable
         className={`flex-1 py-4 rounded-full items-center ${
-          selectedMethod === 'email' ? 'bg-white elevation-2' : ''
+          selectedMethod === 'email' ? 'bg-white' : ''
         }`}
         onPress={() => onMethodChange('email')}
-        style={styles.container}
-      > 
+       > 
         <AppText
           className={`text-base font-semibold ${
             selectedMethod === 'email' ? 'text-teal-600' : 'text-gray-500'
