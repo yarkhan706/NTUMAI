@@ -14,7 +14,6 @@ const Tab = createBottomTabNavigator();
 
 export default function VendorTabs() {
   return (
-    <SafeAreaView className='flex-1'>
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -59,6 +58,5 @@ export default function VendorTabs() {
       <Tab.Screen name="Notifications" component={VendorNotifications} />
       <Tab.Screen name="Profile" component={VendorProfile} />
     </Tab.Navigator>
-    </SafeAreaView>
   );
 }

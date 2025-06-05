@@ -4,7 +4,7 @@
     "slug": "NTUMAI",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo_green.png",
+    "icon": "./assets/ntumai_logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -38,7 +38,7 @@
       ]
     },
     "android": {
-      "icon": "./assets/logo_green.png",
+      "icon": "./assets/ntumai_logo.png",
       "edgeToEdgeEnabled": true,
       "fonts": [
         {

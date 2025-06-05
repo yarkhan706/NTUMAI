@@ -1,6 +1,6 @@
 // ContinueSignUpScreen.tsx
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, Keyboard, TouchableWithoutFeedback, Image } from 'react-native';
+import { View, Text, TextInput, Pressable, Keyboard, TouchableWithoutFeedback, Image, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import Svg, { Path } from 'react-native-svg';
@@ -34,6 +34,10 @@ const ContinueSignUpScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View className="flex-1 bg-white">
+        <KeyboardAvoidingView 
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          className="flex-1"
+        >
         {/* Header Section */}
         <View className="items-center px-6 pt-20 pb-8">
           <Image source={require('../assets/logo_green.png')} resizeMode="contain" className="w-100 h-24 mb-6" />
@@ -293,6 +297,8 @@ const ContinueSignUpScreen = () => {
               </Svg>
             </Pressable>
           </View>
+      </View>
+          </KeyboardAvoidingView>
 
           {/* Footer */}
           <View className="items-center pb-8">
@@ -302,10 +308,9 @@ const ContinueSignUpScreen = () => {
               </Text>
             </Pressable>
           </View>
-        </View>
 
         <StatusBar style="dark" />
-      </View>
+        </View>
     </TouchableWithoutFeedback>
   );
 };

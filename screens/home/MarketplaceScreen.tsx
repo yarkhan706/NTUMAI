@@ -391,7 +391,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
   return (
     <View className='flex-1 bg-gray-50'>
       {/* Header - Following Figma Design */}
-      <View className='bg-teal-500 pt-12 pb-6 px-4'>
+      <View className='bg-teal-500 pt-2 pb-6 px-4'>
         <View className='flex-row items-center justify-between mb-6'>
           <View className='flex-row items-center'>
            <Image source={require('../../assets/splash_logo.png')} resizeMode='contain' className='w-16 h-16'/>

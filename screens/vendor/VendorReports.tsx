@@ -28,7 +28,7 @@ export function VendorReports() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <View className="flex-1 bg-white">
       <VendorHeader />
       <StatusBar barStyle="dark-content" />
 
@@ -137,6 +137,6 @@ export function VendorReports() {
           ))}
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

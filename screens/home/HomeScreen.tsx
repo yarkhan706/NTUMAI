@@ -13,7 +13,7 @@ const HomeScreen = () => {
   return (
     <ScrollView className='flex-1 bg-gray-50'>
       {/* Header */}
-      <View className='bg-teal-500 pt-12 pb-6 px-4'>
+      <View className='bg-teal-500 pt-5 pb-4 px-4'>
         <View className='flex-row items-center justify-between mb-4'>
           <View className='flex-row items-center flex-1'>
             <MapPin size={16} color="white" />

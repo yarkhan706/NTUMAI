@@ -23,7 +23,7 @@ const DriverDashboard = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <View className='flex-1'>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       
       {/* Header */}
@@ -148,7 +148,7 @@ const DriverDashboard = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -28,7 +28,7 @@ export function VendorProfile() {
     'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80'; // replace with your Unsplash URL
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-gray-50">
       <StatusBar barStyle="dark-content" />
 
       {/* Splash Image from Unsplash */}
@@ -115,6 +115,6 @@ export function VendorProfile() {
           <Text className="text-red-600 font-medium ml-2">Logout</Text>
         </TouchableOpacity>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

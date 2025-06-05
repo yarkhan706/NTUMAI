@@ -29,9 +29,9 @@ export function VendorDashboard() {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <View className='flex-1'>
       <VendorHeader />
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       
       {/* Header */}
       <View className="bg-white px-4 py-4 border-b border-gray-200">
@@ -152,6 +152,6 @@ export function VendorDashboard() {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+      </View>
   );
 }

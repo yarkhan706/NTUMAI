@@ -245,7 +245,7 @@ export function VendorProducts() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-gray-50">
       <VendorHeader  />
       <StatusBar barStyle="dark-content" />
       <View className="bg-white px-4 py-4 border-b border-gray-200">
@@ -292,6 +292,6 @@ export function VendorProducts() {
           {renderAddForm()}
         </SafeAreaView>
       </Modal>
-    </SafeAreaView>
+    </View>
   );
 }

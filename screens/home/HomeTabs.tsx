@@ -10,7 +10,6 @@ const Tab = createBottomTabNavigator();
 
 export default function HomeTabs() {
   return (
-    <SafeAreaView className="flex-1">
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
@@ -27,6 +26,5 @@ export default function HomeTabs() {
       <Tab.Screen name="Marketplace" component={MarketplaceScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
-    </SafeAreaView>
   );
 }

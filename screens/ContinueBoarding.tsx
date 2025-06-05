@@ -16,7 +16,7 @@ const ContinueBoardingScreen = ({ navigation }) => {
     >
       <View className='flex-1 bg-white'>
         {/* Header with logo */}
-        <View className='items-center mt-16'>
+        <View className='items-center mt-2'>
           <Image 
             source={require('../assets/logo_green.png')} 
             resizeMode="contain" 
