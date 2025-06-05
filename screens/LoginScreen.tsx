@@ -30,7 +30,6 @@ const LoginScreen = () => {
     if (selectedMethod === 'phone') {
       if (inputValue === '0000') return navigation.navigate('Home');
       if (inputValue === '1111') return navigation.navigate('DriverHome');
-      if (inputValue === '2222') return navigation.navigate('AdminDashboard');
       if (inputValue === '3333') return navigation.navigate('VendorDashboard');
     }
 

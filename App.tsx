@@ -18,7 +18,6 @@ import HomeTabs from './screens/home/HomeTabs';
 import DriverHome, { DriverDashboard, DriverEarnings, DriverOrders, DriverRoutes, DriverSettings } from './screens/driver/DriverHome';
 import { CartScreen, ProductDetailScreen, RestaurantDetailScreen } from './screens/home/MarketplaceScreen';
 import {CheckoutScreen,OrderTrackingScreen,RateOrderScreen } from './screens/checkout/CheckoutScreen';
-import AdminDashboardNavigator from './screens/admin/AdminDashbooard';
 import VendorTabs from './screens/vendor/VendorTabs';
 import AppText from './components/AppText';
 
@@ -191,15 +190,7 @@ export default function App() {
                   }}
                 />
 
-                   {/* Admin Dashboard Navigation */}
-                <Stack.Screen
-                  name="AdminDashboard"
-                  component={AdminDashboardNavigator}
-                  options={{
-                    headerShown: false,
-                    animation: 'slide_from_right',
-                  }}
-                />
+                 
 
                 {/* Vendor Navigation Stack */}
                 <Stack.Screen
