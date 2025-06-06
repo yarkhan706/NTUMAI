@@ -255,13 +255,13 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
       className="mr-4 p-4 rounded-2xl flex-row items-center justify-between"
     >
       <View className="flex-1">
-        <AppText style={{ color: promo.textColor, fontFamily: 'Ubuntu_Medium' }} className="text-sm">
+        <AppText style={{ color: promo.textColor, fontFamily: 'Ubuntu-Medium' }} className="text-sm">
           {promo.title}
         </AppText>
-        <AppText style={{ color: promo.textColor, fontFamily: 'Ubuntu_Medium' }} className="text-sm">
+        <AppText style={{ color: promo.textColor, fontFamily: 'Ubuntu-Medium' }} className="text-sm">
           {promo.subtitle}
         </AppText>
-        <AppText style={{ color: promo.textColor, fontFamily: 'Ubuntu_Bold' }} className="text-2xl mt-1">
+        <AppText style={{ color: promo.textColor, fontFamily: 'Ubuntu-Bold' }} className="text-2xl mt-1">
           {promo.discount}
         </AppText>
         <TouchableOpacity className="bg-white px-3 py-1 rounded-full mt-2 self-start">
@@ -292,7 +292,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
         />
         {restaurant.promoText && (
           <View className='absolute top-3 left-3 bg-red-500 px-2 py-1 rounded-md'>
-            <AppText className='text-white text-xs font-semibold' style={{fontFamily: 'Ubuntu_Medium'}}>{restaurant.promoText}</AppText>
+            <AppText className='text-white text-xs font-semibold' style={{fontFamily: 'Ubuntu-Medium'}}>{restaurant.promoText}</AppText>
           </View>
         )}
         <TouchableOpacity 
@@ -308,15 +308,15 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
       </View>
       
       <View className='p-4'>
-        <AppText className='text-gray-800 font-bold text-base mb-1' style={{fontFamily: 'Ubuntu_Bold'}}>{restaurant.name}</AppText>
+        <AppText className='text-gray-800 font-bold text-base mb-1' style={{fontFamily: 'Ubuntu-Bold'}}>{restaurant.name}</AppText>
         <View className='flex-row items-center mb-2'>
           <Star size={14} color="#FCD34D" fill="#FCD34D" />
-          <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu_Medium'}}>{restaurant.rating}</AppText>
+          <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu-Medium'}}>{restaurant.rating}</AppText>
           <AppText className='text-gray-400 text-sm ml-2'>•</AppText>
           <Clock size={14} color="#9CA3AF" />
-          <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu_Medium'}}>{restaurant.deliveryTime}</AppText>
+          <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu-Medium'}}>{restaurant.deliveryTime}</AppText>
         </View>
-        <AppText className='text-gray-500 text-sm mb-2' style={{fontFamily: 'Ubuntu_Medium'}}>{restaurant.category}</AppText>
+        <AppText className='text-gray-500 text-sm mb-2' style={{fontFamily: 'Ubuntu-Medium'}}>{restaurant.category}</AppText>
         <View className='flex-row items-center justify-between'>
           <View className='flex-row items-center'>
             <Truck size={14} color="#10B981" />
@@ -344,7 +344,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
           />
           {product.isPromo && (
             <View className='absolute -top-2 -right-2 bg-red-500 w-6 h-6 rounded-full items-center justify-center'>
-              <AppText className='text-white text-xs font-bold' style={{fontFamily: 'Ubuntu_Bold'}}>%</AppText>
+              <AppText className='text-white text-xs font-bold' style={{fontFamily: 'Ubuntu-Bold'}}>%</AppText>
             </View>
           )}
         </View>
@@ -352,7 +352,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
         <View className='flex-1 ml-4 justify-between'>
           <View>
             <View className='flex-row items-start justify-between mb-1'>
-              <AppText className='text-gray-800 font-semibold text-base flex-1' style={{fontFamily: 'Ubuntu_Bold'}}>{product.name}</AppText>
+              <AppText className='text-gray-800 font-semibold text-base flex-1' style={{fontFamily: 'Ubuntu-Bold'}}>{product.name}</AppText>
               <TouchableOpacity 
                 className='bg-red-500 w-7 h-7 rounded-full items-center justify-center ml-2'
                 onPress={() => addToCart(product)}
@@ -363,23 +363,23 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
             
             <View className='flex-row items-center mb-2'>
               <Star size={12} color="#FCD34D" fill="#FCD34D" />
-              <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu_Medium'}}>{product.rating}</AppText>
-              <AppText className='text-gray-400 text-sm ml-1' style={{fontFamily: 'Ubuntu_Medium'}}>({product.reviews})</AppText>
+              <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu-Medium'}}>{product.rating}</AppText>
+              <AppText className='text-gray-400 text-sm ml-1' style={{fontFamily: 'Ubuntu-Medium'}}>({product.reviews})</AppText>
             </View>
             
-            <AppText className='text-gray-500 text-sm mb-1' style={{fontFamily: 'Ubuntu_Medium'}}>{product.restaurant}</AppText>
+            <AppText className='text-gray-500 text-sm mb-1' style={{fontFamily: 'Ubuntu-Medium'}}>{product.restaurant}</AppText>
           </View>
           
           <View className='flex-row items-center justify-between'>
             <View className='flex-row items-center'>
-              <AppText className='text-red-500 font-bold text-lg' style={{fontFamily: 'Ubuntu_Bold'}}>K{product.price}</AppText>
+              <AppText className='text-red-500 font-bold text-lg' style={{fontFamily: 'Ubuntu-Bold'}}>K{product.price}</AppText>
               {product.originalPrice && (
-                <AppText className='text-gray-400 text-sm line-through ml-2' style={{fontFamily: 'Ubuntu_Medium'}}>K{product.originalPrice}</AppText>
+                <AppText className='text-gray-400 text-sm line-through ml-2' style={{fontFamily: 'Ubuntu-Medium'}}>K{product.originalPrice}</AppText>
               )}
             </View>
             {product.isPromo && (
               <View className='bg-red-100 px-2 py-1 rounded-md'>
-                <AppText className='text-red-500 text-xs font-medium' style={{fontFamily: 'Ubuntu_Medium'}}>{product.promoText}</AppText>
+                <AppText className='text-red-500 text-xs font-medium' style={{fontFamily: 'Ubuntu-Medium'}}>{product.promoText}</AppText>
               </View>
             )}
           </View>
@@ -404,7 +404,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
               <ShoppingCart size={24} color="white" />
               {cartCount > 0 && (
                 <View className='absolute -top-2 -right-2 bg-red-500 rounded-full w-5 h-5 items-center justify-center'>
-                  <AppText className='text-white text-xs font-bold' style={{fontFamily: 'Ubuntu_Bold'}}>{cartCount}</AppText>
+                  <AppText className='text-white text-xs font-bold' style={{fontFamily: 'Ubuntu-Bold'}}>{cartCount}</AppText>
                 </View>
               )}
             </TouchableOpacity>
@@ -424,7 +424,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
             ))}
           </ScrollView>
           <TouchableOpacity>
-            <AppText className='text-white font-semibold' style={{fontFamily: 'Ubuntu_Bold'}}>View All</AppText>
+            <AppText className='text-white font-semibold' style={{fontFamily: 'Ubuntu-Bold'}}>View All</AppText>
           </TouchableOpacity>
         </View>
 
@@ -440,9 +440,9 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
         {/* Trending Section */}
         <View className='px-4 py-6'>
           <View className='flex-row items-center justify-between mb-4'>
-            <AppText className='text-gray-800 text-lg font-bold' style={{fontFamily: 'Ubuntu_Bold'}}>Trending</AppText>
+            <AppText className='text-gray-800 text-lg font-bold' style={{fontFamily: 'Ubuntu-Bold'}}>Trending</AppText>
             <TouchableOpacity>
-              <AppText className='text-teal-500 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>See all</AppText>
+              <AppText className='text-teal-500 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>See all</AppText>
             </TouchableOpacity>
           </View>
           
@@ -471,10 +471,10 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
                   </TouchableOpacity>
                 </View>
                 <View className='p-3'>
-                  <AppText className='font-semibold text-gray-800 text-sm' numberOfLines={1} style={{fontFamily: 'Ubuntu_Bold'}}>
+                  <AppText className='font-semibold text-gray-800 text-sm' numberOfLines={1} style={{fontFamily: 'Ubuntu-Bold'}}>
                     {restaurant.name}
                   </AppText>
-                  <AppText className='text-red-500 font-bold text-base' style={{fontFamily: 'Ubuntu_Bold'}}>K{Math.floor(Math.random() * 50) + 100}</AppText>
+                  <AppText className='text-red-500 font-bold text-base' style={{fontFamily: 'Ubuntu-Bold'}}>K{Math.floor(Math.random() * 50) + 100}</AppText>
                 </View>
               </TouchableOpacity>
             ))}
@@ -516,7 +516,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
                     selectedCategory === category 
                       ? 'text-white' 
                       : 'text-gray-600'
-                  }`} style={{fontFamily: 'Ubuntu_Bold'}}>
+                  }`} style={{fontFamily: 'Ubuntu-Bold'}}>
                     {category}
                   </AppText>
                 </TouchableOpacity>
@@ -542,7 +542,7 @@ export default function MarketplaceScreen({ navigation }: MarketplaceScreenProps
 
         {/* Popular Items */}
         <View className='px-4 pb-20'>
-          <AppText className='text-gray-800 text-lg font-bold mb-4' style={{fontFamily: 'Ubuntu_Bold'}}>
+          <AppText className='text-gray-800 text-lg font-bold mb-4' style={{fontFamily: 'Ubuntu-Bold'}}>
             Popular Items
           </AppText>
           {filteredProducts.map(product => (
@@ -614,18 +614,18 @@ export function RestaurantDetailScreen({ route, navigation }: RestaurantDetailSc
         </View>
         {restaurant.promoText && (
           <View className='absolute bottom-4 left-4 bg-red-500 px-3 py-1 rounded-full'>
-            <AppText className='text-white text-sm font-semibold' style={{fontFamily: 'Ubuntu_Bold'}}>{restaurant.promoText}</AppText>
+            <AppText className='text-white text-sm font-semibold' style={{fontFamily: 'Ubuntu-Bold'}}>{restaurant.promoText}</AppText>
           </View>
         )}
       </View>
 
       {/* Restaurant Info */}
       <View className='px-4 py-6 border-b border-gray-100'>
-        <AppText className='text-2xl font-bold text-gray-800 mb-2' style={{fontFamily: 'Ubuntu_Bold'}}>{restaurant.name}</AppText>
+        <AppText className='text-2xl font-bold text-gray-800 mb-2' style={{fontFamily: 'Ubuntu-Bold'}}>{restaurant.name}</AppText>
         
         <View className='flex-row items-center mb-3'>
           <Star size={16} color="#FCD34D" fill="#FCD34D" />
-          <AppText className='text-gray-600 ml-1 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>{restaurant.rating}</AppText>
+          <AppText className='text-gray-600 ml-1 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>{restaurant.rating}</AppText>
           <AppText className='text-gray-400 ml-2'>•</AppText>
           <Clock size={16} color="#9CA3AF" />
           <AppText className='text-gray-600 ml-1'>{restaurant.deliveryTime}</AppText>
@@ -634,12 +634,12 @@ export function RestaurantDetailScreen({ route, navigation }: RestaurantDetailSc
           <AppText className='text-gray-600 ml-1'>{restaurant.location}</AppText>
         </View>
 
-        <AppText className='text-gray-500 mb-4' style={{fontFamily: 'Ubuntu_Bold'}}>{restaurant.category}</AppText>
+        <AppText className='text-gray-500 mb-4' style={{fontFamily: 'Ubuntu-Bold'}}>{restaurant.category}</AppText>
 
         <View className='flex-row items-center justify-between'>
           <View className='flex-row items-center'>
             <Truck size={16} color="#10B981" />
-            <AppText className='text-green-600 ml-1 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>
+            <AppText className='text-green-600 ml-1 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>
               {restaurant.deliveryFee === 0 ? 'Free delivery' : `K${restaurant.deliveryFee} delivery`}
             </AppText>
             <AppText className='text-gray-500 ml-3 text-sm'>Min K{restaurant.minOrder}</AppText>
@@ -648,7 +648,7 @@ export function RestaurantDetailScreen({ route, navigation }: RestaurantDetailSc
             className={`px-4 py-2 rounded-full ${isFollowing ? 'bg-gray-200' : 'bg-teal-500'}`}
             onPress={() => setIsFollowing(!isFollowing)}
           >
-            <AppText className={`font-medium ${isFollowing ? 'text-gray-700' : 'text-white'}`} style={{fontFamily: 'Ubuntu_Bold'}}>
+            <AppText className={`font-medium ${isFollowing ? 'text-gray-700' : 'text-white'}`} style={{fontFamily: 'Ubuntu-Bold'}}>
               {isFollowing ? 'Following' : 'Follow'}
             </AppText>
           </TouchableOpacity>
@@ -673,7 +673,7 @@ export function RestaurantDetailScreen({ route, navigation }: RestaurantDetailSc
                   selectedCategory === category 
                     ? 'text-white' 
                     : 'text-gray-600'
-                }`} style={{fontFamily: 'Ubuntu_Bold'}}>
+                }`} style={{fontFamily: 'Ubuntu-Bold'}}>
                   {category}
                 </AppText>
               </TouchableOpacity>
@@ -692,29 +692,29 @@ export function RestaurantDetailScreen({ route, navigation }: RestaurantDetailSc
           >
             <View className='flex-row p-4'>
               <View className='flex-1 mr-4'>
-                <AppText className='text-gray-800 font-semibold text-lg mb-2' style={{fontFamily: 'Ubuntu_Bold'}}>{product.name}</AppText>
-                <AppText className='text-gray-500 text-sm mb-3' numberOfLines={2} style={{fontFamily: 'Ubuntu_Bold'}}>
+                <AppText className='text-gray-800 font-semibold text-lg mb-2' style={{fontFamily: 'Ubuntu-Bold'}}>{product.name}</AppText>
+                <AppText className='text-gray-500 text-sm mb-3' numberOfLines={2} style={{fontFamily: 'Ubuntu-Bold'}}>
                   {product.description}
                 </AppText>
                 
                 <View className='flex-row items-center mb-2'>
                   <Star size={14} color="#FCD34D" fill="#FCD34D" />
-                  <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu_Bold'}}>{product.rating}</AppText>
-                  <AppText className='text-gray-400 text-sm ml-1' style={{fontFamily: 'Ubuntu_Bold'}}>({product.reviews})</AppText>
+                  <AppText className='text-gray-600 text-sm ml-1' style={{fontFamily: 'Ubuntu-Bold'}}>{product.rating}</AppText>
+                  <AppText className='text-gray-400 text-sm ml-1' style={{fontFamily: 'Ubuntu-Bold'}}>({product.reviews})</AppText>
                 </View>
                 
                 <View className='flex-row items-center justify-between'>
                   <View className='flex-row items-center'>
-                    <AppText className='text-teal-500 font-bold text-xl' style={{fontFamily: 'Ubuntu_Bold'}}>K{product.price}</AppText>
+                    <AppText className='text-teal-500 font-bold text-xl' style={{fontFamily: 'Ubuntu-Bold'}}>K{product.price}</AppText>
                     {product.originalPrice && (
-                      <AppText className='text-gray-400 text-sm line-through ml-2' style={{fontFamily: 'Ubuntu_Bold'}}>K{product.originalPrice}</AppText>
+                      <AppText className='text-gray-400 text-sm line-through ml-2' style={{fontFamily: 'Ubuntu-Bold'}}>K{product.originalPrice}</AppText>
                     )}
                   </View>
                   <TouchableOpacity 
                     className='bg-teal-500 px-4 py-2 rounded-full'
                     onPress={() => addToCart(product)}
                   >
-                    <AppText className='text-white text-sm font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>Add to Cart</AppText>
+                    <AppText className='text-white text-sm font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>Add to Cart</AppText>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -727,7 +727,7 @@ export function RestaurantDetailScreen({ route, navigation }: RestaurantDetailSc
                 />
                 {product.isPromo && (
                   <View className='absolute -top-2 -right-2 bg-red-500 w-6 h-6 rounded-full items-center justify-center'>
-                    <AppText className='text-white text-xs font-bold' style={{fontFamily: 'Ubuntu_Bold'}}>%</AppText>
+                    <AppText className='text-white text-xs font-bold' style={{fontFamily: 'Ubuntu-Bold'}}>%</AppText>
                   </View>
                 )}
               </View>
@@ -822,7 +822,7 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
         </View>
         {product.isPromo && (
           <View className='absolute bottom-4 left-4 bg-red-500 px-3 py-2 rounded-full'>
-            <AppText className='text-white font-semibold' style={{fontFamily: 'Ubuntu_Bold'}}>{product.promoText}</AppText>
+            <AppText className='text-white font-semibold' style={{fontFamily: 'Ubuntu-Bold'}}>{product.promoText}</AppText>
           </View>
         )}
       </View>
@@ -830,21 +830,21 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
       <ScrollView className='flex-1'>
         {/* Product Info */}
         <View className='px-4 py-6'>
-          <AppText className='text-2xl font-bold text-gray-800 mb-2' style={{fontFamily: 'Ubuntu_Bold'}}>{product.name}</AppText>
+          <AppText className='text-2xl font-bold text-gray-800 mb-2' style={{fontFamily: 'Ubuntu-Bold'}}>{product.name}</AppText>
           
           <View className='flex-row items-center mb-4'>
             <Star size={16} color="#FCD34D" fill="#FCD34D" />
-            <AppText className='text-gray-600 ml-1 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>{product.rating}</AppText>
-            <AppText className='text-gray-400 ml-1' style={{fontFamily: 'Ubuntu_Bold'}}>({product.reviews} reviews)</AppText>
-            <AppText className='text-gray-400 ml-4' style={{fontFamily: 'Ubuntu_Bold'}}>•</AppText>
-            <AppText className='text-teal-500 ml-2 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>{product.restaurant}</AppText>
+            <AppText className='text-gray-600 ml-1 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>{product.rating}</AppText>
+            <AppText className='text-gray-400 ml-1' style={{fontFamily: 'Ubuntu-Bold'}}>({product.reviews} reviews)</AppText>
+            <AppText className='text-gray-400 ml-4' style={{fontFamily: 'Ubuntu-Bold'}}>•</AppText>
+            <AppText className='text-teal-500 ml-2 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>{product.restaurant}</AppText>
           </View>
 
-          <AppText className='text-gray-600 text-base mb-6 leading-6' style={{fontFamily: 'Ubuntu_Bold'}}>{product.description}</AppText>
+          <AppText className='text-gray-600 text-base mb-6 leading-6' style={{fontFamily: 'Ubuntu-Bold'}}>{product.description}</AppText>
 
           {/* Size Selection */}
           <View className='mb-6'>
-            <AppText className='text-gray-800 font-semibold text-lg mb-3' style={{fontFamily: 'Ubuntu_Bold'}}>Size</AppText>
+            <AppText className='text-gray-800 font-semibold text-lg mb-3' style={{fontFamily: 'Ubuntu-Bold'}}>Size</AppText>
             <View className='flex-row gap-3'>
               {sizes.map(size => (
                 <TouchableOpacity
@@ -858,12 +858,12 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
                 >
                   <AppText className={`text-center font-medium ${
                     selectedSize === size ? 'text-teal-600' : 'text-gray-600'
-                  }`} style={{fontFamily: 'Ubuntu_Bold'}}>
+                  }`} style={{fontFamily: 'Ubuntu-Bold'}}>
                     {size}
                   </AppText>
                   <AppText className={`text-center text-sm ${
                     selectedSize === size ? 'text-teal-500' : 'text-gray-400'
-                  }`} style={{fontFamily: 'Ubuntu_Bold'}}>
+                  }`} style={{fontFamily: 'Ubuntu-Bold'}}>
                     {sizePrice[size as keyof typeof sizePrice] >= 0 ? '+' : ''}K{sizePrice[size as keyof typeof sizePrice]}
                   </AppText>
                 </TouchableOpacity>
@@ -873,23 +873,23 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
 
           {/* Extras */}
           <View className='mb-6'>
-            <AppText className='text-gray-800 font-semibold text-lg mb-3' style={{fontFamily: 'Ubuntu_Bold'}}>Add Extras</AppText>
+            <AppText className='text-gray-800 font-semibold text-lg mb-3' style={{fontFamily: 'Ubuntu-Bold'}}>Add Extras</AppText>
             {extras.map(extra => (
               <TouchableOpacity
                 key={extra}
                 onPress={() => toggleExtra(extra)}
                 className='flex-row items-center justify-between py-3 border-b border-gray-100'
               >
-                <AppText className='text-gray-700 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>{extra}</AppText>
+                <AppText className='text-gray-700 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>{extra}</AppText>
                 <View className='flex-row items-center'>
-                  <AppText className='text-gray-500 mr-3' style={{fontFamily: 'Ubuntu_Bold'}}>+K{extraPrice}</AppText>
+                  <AppText className='text-gray-500 mr-3' style={{fontFamily: 'Ubuntu-Bold'}}>+K{extraPrice}</AppText>
                   <View className={`w-6 h-6 rounded border-2 items-center justify-center ${
                     selectedExtras.includes(extra) 
                       ? 'border-teal-500 bg-teal-500' 
                       : 'border-gray-300'
                   }`}>
                     {selectedExtras.includes(extra) && (
-                      <AppText className='text-white text-xs' style={{fontFamily: 'Ubuntu_Bold'}}>✓</AppText>
+                      <AppText className='text-white text-xs' style={{fontFamily: 'Ubuntu-Bold'}}>✓</AppText>
                     )}
                   </View>
                 </View>
@@ -899,7 +899,7 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
 
           {/* Quantity */}
           <View className='mb-8'>
-            <AppText className='text-gray-800 font-semibold text-lg mb-3' style={{fontFamily: 'Ubuntu_Bold'}}>Quantity</AppText>
+            <AppText className='text-gray-800 font-semibold text-lg mb-3' style={{fontFamily: 'Ubuntu-Bold'}}>Quantity</AppText>
             <View className='flex-row items-center'>
               <TouchableOpacity
                 onPress={() => setQuantity(Math.max(1, quantity - 1))}
@@ -907,7 +907,7 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
               >
                 <Minus size={18} color="#6B7280" />
               </TouchableOpacity>
-              <AppText className='mx-6 text-xl font-semibold text-gray-800' style={{fontFamily: 'Ubuntu_Bold'}}>{quantity}</AppText>
+              <AppText className='mx-6 text-xl font-semibold text-gray-800' style={{fontFamily: 'Ubuntu-Bold'}}>{quantity}</AppText>
               <TouchableOpacity
                 onPress={() => setQuantity(quantity + 1)}
                 className='w-12 h-12 rounded-full border-2 border-teal-500 bg-teal-500 items-center justify-center'
@@ -926,7 +926,7 @@ export function ProductDetailScreen({ route, navigation }: ProductDetailScreenPr
           className='bg-teal-500 py-4 rounded-2xl flex-row items-center justify-center'
         >
           <ShoppingCart size={20} color="white" />
-          <AppText className='text-white font-bold text-lg ml-2' style={{fontFamily: 'Ubuntu_Bold'}}>
+          <AppText className='text-white font-bold text-lg ml-2' style={{fontFamily: 'Ubuntu-Bold'}}>
             Add to Cart • K{calculateTotal()}
           </AppText>
         </TouchableOpacity>
@@ -970,18 +970,18 @@ export function CartScreen({ navigation }: CartScreenProps) {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <ArrowLeft size={24} color="#374151" />
           </TouchableOpacity>
-          <AppText className='text-xl font-bold text-gray-800 ml-4' style={{fontFamily: 'Ubuntu_Bold'}}>Cart</AppText>
+          <AppText className='text-xl font-bold text-gray-800 ml-4' style={{fontFamily: 'Ubuntu-Bold'}}>Cart</AppText>
         </View>
         
         <View className='flex-1 items-center justify-center px-4'>
           <ShoppingCart size={80} color="#D1D5DB" />
-          <AppText className='text-xl font-semibold text-gray-800 mt-4 mb-2' style={{fontFamily: 'Ubuntu_Bold'}}>Your cart is empty</AppText>
-          <AppText className='text-gray-500 text-center mb-8' style={{fontFamily: 'Ubuntu_Bold'}}>Add some delicious items to get started</AppText>
+          <AppText className='text-xl font-semibold text-gray-800 mt-4 mb-2' style={{fontFamily: 'Ubuntu-Bold'}}>Your cart is empty</AppText>
+          <AppText className='text-gray-500 text-center mb-8' style={{fontFamily: 'Ubuntu-Bold'}}>Add some delicious items to get started</AppText>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             className='bg-teal-500 px-6 py-3 rounded-full'
           >
-            <AppText className='text-white font-semibold' style={{fontFamily: 'Ubuntu_Bold'}}>Continue Shopping</AppText>
+            <AppText className='text-white font-semibold' style={{fontFamily: 'Ubuntu-Bold'}}>Continue Shopping</AppText>
           </TouchableOpacity>
         </View>
       </View>
@@ -995,7 +995,7 @@ export function CartScreen({ navigation }: CartScreenProps) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <ArrowLeft size={24} color="#374151" />
         </TouchableOpacity>
-        <AppText className='text-xl font-bold text-gray-800 ml-4' style={{fontFamily: 'Ubuntu_Bold'}}>Cart ({cartItems.length})</AppText>
+        <AppText className='text-xl font-bold text-gray-800 ml-4' style={{fontFamily: 'Ubuntu-Bold'}}>Cart ({cartItems.length})</AppText>
       </View>
 
       <ScrollView className='flex-1'>
@@ -1012,7 +1012,7 @@ export function CartScreen({ navigation }: CartScreenProps) {
                 
                 <View className='flex-1 ml-4'>
                   <View className='flex-row items-start justify-between mb-2'>
-                    <AppText className='text-gray-800 font-semibold text-base flex-1' numberOfLines={1} style={{fontFamily: 'Ubuntu_Bold'}}>
+                    <AppText className='text-gray-800 font-semibold text-base flex-1' numberOfLines={1} style={{fontFamily: 'Ubuntu-Bold'}}>
                       {item.name}
                     </AppText>
                     <TouchableOpacity onPress={() => removeItem(item.id)}>
@@ -1020,15 +1020,15 @@ export function CartScreen({ navigation }: CartScreenProps) {
                     </TouchableOpacity>
                   </View>
                   
-                  <AppText className='text-gray-500 text-sm mb-2' style={{fontFamily: 'Ubuntu_Bold'}}>{item.restaurant}</AppText>
+                  <AppText className='text-gray-500 text-sm mb-2' style={{fontFamily: 'Ubuntu-Bold'}}>{item.restaurant}</AppText>
                   
                   {(item as any).customizations && (
                     <View className='mb-2'>
-                      <AppText className='text-gray-500 text-xs' style={{fontFamily: 'Ubuntu_Bold'}}>
+                      <AppText className='text-gray-500 text-xs' style={{fontFamily: 'Ubuntu-Bold'}}>
                         Size: {(item as any).customizations.size}
                       </AppText>
                       {(item as any).customizations.extras.length > 0 && (
-                        <AppText className='text-gray-500 text-xs' style={{fontFamily: 'Ubuntu_Bold'}}>
+                        <AppText className='text-gray-500 text-xs' style={{fontFamily: 'Ubuntu-Bold'}}>
                           Extras: {(item as any).customizations.extras.join(', ')}
                         </AppText>
                       )}
@@ -1036,7 +1036,7 @@ export function CartScreen({ navigation }: CartScreenProps) {
                   )}
                   
                   <View className='flex-row items-center justify-between'>
-                    <AppText className='text-teal-500 font-bold text-lg' style={{fontFamily: 'Ubuntu_Bold'}}>K{item.price}</AppText>
+                    <AppText className='text-teal-500 font-bold text-lg' style={{fontFamily: 'Ubuntu-Bold'}}>K{item.price}</AppText>
                     
                     <View className='flex-row items-center'>
                       <TouchableOpacity
@@ -1045,7 +1045,7 @@ export function CartScreen({ navigation }: CartScreenProps) {
                       >
                         <Minus size={14} color="#6B7280" />
                       </TouchableOpacity>
-                      <AppText className='mx-3 font-semibold text-gray-800' style={{fontFamily: 'Ubuntu_Bold'}}>{item.quantity}</AppText>
+                      <AppText className='mx-3 font-semibold text-gray-800' style={{fontFamily: 'Ubuntu-Bold'}}>{item.quantity}</AppText>
                       <TouchableOpacity
                         onPress={() => updateQuantity(item.id, item.quantity + 1)}
                         className='w-8 h-8 rounded-full bg-teal-500 items-center justify-center'
@@ -1062,22 +1062,22 @@ export function CartScreen({ navigation }: CartScreenProps) {
 
         {/* Order Summary */}
         <View className='bg-white mx-4 mb-4 p-4 rounded-2xl shadow-sm'>
-          <AppText className='text-gray-800 font-semibold text-lg mb-4' style={{fontFamily: 'Ubuntu_Bold'}}>Order Summary</AppText>
+          <AppText className='text-gray-800 font-semibold text-lg mb-4' style={{fontFamily: 'Ubuntu-Bold'}}>Order Summary</AppText>
           
           <View className='flex-row justify-between mb-2'>
-            <AppText className='text-gray-600' style={{fontFamily: 'Ubuntu_Bold'}}>Subtotal</AppText>
-            <AppText className='text-gray-800 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>K{subtotal.toFixed(2)}</AppText>
+            <AppText className='text-gray-600' style={{fontFamily: 'Ubuntu-Bold'}}>Subtotal</AppText>
+            <AppText className='text-gray-800 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>K{subtotal.toFixed(2)}</AppText>
           </View>
           
           <View className='flex-row justify-between mb-2'>
-            <AppText className='text-gray-600' style={{fontFamily: 'Ubuntu_Bold'}}>Delivery Fee</AppText>
-            <AppText className='text-gray-800 font-medium' style={{fontFamily: 'Ubuntu_Bold'}}>K{deliveryFee}</AppText>
+            <AppText className='text-gray-600' style={{fontFamily: 'Ubuntu-Bold'}}>Delivery Fee</AppText>
+            <AppText className='text-gray-800 font-medium' style={{fontFamily: 'Ubuntu-Bold'}}>K{deliveryFee}</AppText>
           </View>
           
           <View className='border-t border-gray-200 pt-2 mt-2'>
             <View className='flex-row justify-between'>
-              <AppText className='text-gray-800 font-bold text-lg' style={{fontFamily: 'Ubuntu_Bold'}}>Total</AppText>
-              <AppText className='text-teal-500 font-bold text-lg' style={{fontFamily: 'Ubuntu_Bold'}}>K{total.toFixed(2)}</AppText>
+              <AppText className='text-gray-800 font-bold text-lg' style={{fontFamily: 'Ubuntu-Bold'}}>Total</AppText>
+              <AppText className='text-teal-500 font-bold text-lg' style={{fontFamily: 'Ubuntu-Bold'}}>K{total.toFixed(2)}</AppText>
             </View>
           </View>
         </View>
@@ -1089,7 +1089,7 @@ export function CartScreen({ navigation }: CartScreenProps) {
           onPress={() => navigation.navigate('Checkout')}
           className='bg-teal-500 py-4 rounded-2xl'
         >
-          <AppText className='text-white font-bold text-lg text-center' style={{fontFamily: 'Ubuntu_Bold'}}>
+          <AppText className='text-white font-bold text-lg text-center' style={{fontFamily: 'Ubuntu-Bold'}}>
             Proceed to Checkout • K{total.toFixed(2)}
           </AppText>
         </TouchableOpacity>
