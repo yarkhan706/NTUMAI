@@ -17,7 +17,7 @@ const HomeScreen = () => {
         <View className='flex-row items-center justify-between mb-4'>
           <View className='flex-row items-center flex-1'>
             <MapPin size={16} color="white" />
-            <AppText className='text-white ml-2 text-xs font-medium' style={{fontFamily: 'Ubuntu_Medium'}} numberOfLines={1}>
+            <AppText className='text-white ml-2 text-xs font-medium' style={{fontFamily: 'Ubuntu-Medium'}} numberOfLines={1}>
               ZA1893, Mulungushi, Lusaka Zambia
             </AppText>
           </View>
@@ -49,16 +49,16 @@ const HomeScreen = () => {
       <View className='mx-4 mt-6 mb-6'>
         <View className='bg-teal-500 rounded-2xl p-5 flex-row items-center justify-between shadow-sm'>
           <View className='flex-1'>
-            <AppText className='text-yellow-400 text-xl font-extrabold mb-1' style={{fontFamily: 'Ubuntu_ExtraBold'}}>
+            <AppText className='text-yellow-400 text-xl font-extrabold mb-1' style={{fontFamily: 'Ubuntu-Bold'}}>
               Get ready,
             </AppText>
-            <AppText className='text-yellow-400 text-xl font-extrabold mb-4' style={{fontFamily: 'Ubuntu_ExtraBold'}}>
+            <AppText className='text-yellow-400 text-xl font-extrabold mb-4' style={{fontFamily: 'Ubuntu-Bold'}}>
               Move on!
             </AppText>
             <View className='bg-yellow-400 flex-row items-center justify-center rounded-full w-20 h-20'>
               <View className='bg-teal-500 rounded-full w-14 h-14 items-center justify-center'>
-                <AppText className='text-white text-lg font-bold' style={{fontFamily: 'Ubuntu_Bold'}}>10</AppText>
-                <AppText className='text-white text-xs font-medium' style={{fontFamily: 'Ubuntu_Medium'}}>min</AppText>
+                <AppText className='text-white text-lg font-bold' style={{fontFamily: 'Ubuntu-Bold'}}>10</AppText>
+                <AppText className='text-white text-xs font-medium' style={{fontFamily: 'Ubuntu-Medium'}}>min</AppText>
               </View>
             </View>
           </View>
@@ -71,7 +71,7 @@ const HomeScreen = () => {
               />
             </View>
             <TouchableOpacity className='bg-white rounded-full px-6 py-2 shadow-sm'>
-              <AppText className='text-teal-500 text-sm font-semibold' style={{fontFamily: 'Ubuntu_Medium'}}>Book now</AppText>
+              <AppText className='text-teal-500 text-sm font-semibold' style={{fontFamily: 'Ubuntu-Medium'}}>Book now</AppText>
             </TouchableOpacity>
           </View>
         </View>
@@ -79,7 +79,7 @@ const HomeScreen = () => {
 
       {/* What are you thinking? */}
       <View className='px-4 mb-6'>
-        <AppText className='text-gray-800 text-lg font-semibold mb-4' style={{fontFamily: 'Ubuntu_Medium'}}>
+        <AppText className='text-gray-800 text-lg font-semibold mb-4' style={{fontFamily: 'Ubuntu-Medium'}}>
           What are you thinking?
         </AppText>
         <View className='flex-row flex-wrap gap-2'>
@@ -90,7 +90,7 @@ const HomeScreen = () => {
                 className='absolute inset-0 w-full h-full opacity-30'
                 resizeMode='cover'
               />
-              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu_Medium'}}>Last Delivery</AppText>
+              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu-Medium'}}>Last Delivery</AppText>
             </View>
           </TouchableOpacity>
           <TouchableOpacity className='flex-1 ml-1 mb-2' style={{ minWidth: (width - 36) / 2 - 4 }}>
@@ -100,7 +100,7 @@ const HomeScreen = () => {
                 className='absolute inset-0 w-full h-full opacity-30'
                 resizeMode='cover'
               />
-              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu_Medium'}}>Latest</AppText>
+              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu-Medium'}}>Latest</AppText>
             </View>
           </TouchableOpacity>
           <TouchableOpacity className='flex-1 mr-1' style={{ minWidth: (width - 36) / 2 - 4 }}>
@@ -110,7 +110,7 @@ const HomeScreen = () => {
                 className='absolute inset-0 w-full h-full opacity-30'
                 resizeMode='cover'
               />
-              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu_Medium'}}>Trending</AppText>
+              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu-Medium'}}>Trending</AppText>
             </View>
           </TouchableOpacity>
           <TouchableOpacity className='flex-1 ml-1' style={{ minWidth: (width - 36) / 2 - 4 }}>
@@ -120,7 +120,7 @@ const HomeScreen = () => {
                 className='absolute inset-0 w-full h-full opacity-30'
                 resizeMode='cover'
               />
-              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu_Medium'}}>New Stores</AppText>
+              <AppText className='text-white font-semibold text-sm' style={{fontFamily: 'Ubuntu-Medium'}}>New Stores</AppText>
             </View>
           </TouchableOpacity>
         </View>
@@ -128,22 +128,22 @@ const HomeScreen = () => {
 
       {/* Track your Order */}
       <View className='px-4 mb-20'>
-        <AppText className='text-gray-800 text-lg font-semibold mb-4' style={{fontFamily: 'Ubuntu_Medium'}}>
+        <AppText className='text-gray-800 text-lg font-semibold mb-4' style={{fontFamily: 'Ubuntu-Medium'}}>
           Track your Order
         </AppText>
         <View className='bg-white rounded-2xl overflow-hidden shadow-sm'>
           <View className='flex-row'>
             <View className='bg-teal-500 p-4 flex-1'>
-              <AppText className='text-white text-sm font-semibold mb-1' style={{fontFamily: 'Ubuntu_Medium'}}>Traveling to</AppText>
-              <AppText className='text-white text-xs mb-2 font-medium' style={{fontFamily: 'Ubuntu_Medium'}}>HIGHSCHOOL HOTEL</AppText>
+              <AppText className='text-white text-sm font-semibold mb-1' style={{fontFamily: 'Ubuntu-Medium'}}>Traveling to</AppText>
+              <AppText className='text-white text-xs mb-2 font-medium' style={{fontFamily: 'Ubuntu-Medium'}}>HIGHSCHOOL HOTEL</AppText>
               <View className='flex-row items-center mb-1'>
                 <MapPin size={10} color="white" />
-                <AppText className='text-white text-xs ml-1' style={{fontFamily: 'Ubuntu_Medium'}}>Food Arena</AppText>
+                <AppText className='text-white text-xs ml-1' style={{fontFamily: 'Ubuntu-Medium'}}>Food Arena</AppText>
               </View>
-              <AppText className='text-white text-xs mb-2' style={{fontFamily: 'Ubuntu_Medium'}}>Lower Kabete, Kabete Park</AppText>
-              <AppText className='text-white text-xs font-medium' style={{fontFamily: 'Ubuntu_Medium'}}>Delivering</AppText>
-              <AppText className='text-white text-xs' style={{fontFamily: 'Ubuntu_Medium'}}>Order from Mama Pork</AppText>
-              <AppText className='text-white text-xs font-medium' style={{fontFamily: 'Ubuntu_Medium'}}>Approx. 24min</AppText>
+              <AppText className='text-white text-xs mb-2' style={{fontFamily: 'Ubuntu-Medium'}}>Lower Kabete, Kabete Park</AppText>
+              <AppText className='text-white text-xs font-medium' style={{fontFamily: 'Ubuntu-Medium'}}>Delivering</AppText>
+              <AppText className='text-white text-xs' style={{fontFamily: 'Ubuntu-Medium'}}>Order from Mama Pork</AppText>
+              <AppText className='text-white text-xs font-medium' style={{fontFamily: 'Ubuntu-Medium'}}>Approx. 24min</AppText>
             </View>
             <View className='flex-1 p-4 items-center justify-center'>
               <View className='w-full h-24 bg-gray-100 rounded-lg items-center justify-center mb-2 relative overflow-hidden'>
@@ -164,7 +164,7 @@ const HomeScreen = () => {
               </View>
               <TouchableOpacity className='flex-row items-center'>
                 <Navigation size={12} color="#14B8A6" />
-                <Text className='text-teal-500 text-xs font-medium ml-1'>Get Directions</Text>
+                <AppText style={{fontFamily: 'Ubuntu-Medium'}} className='text-teal-500 text-xs font-medium ml-1'>Get Directions</AppText>
               </TouchableOpacity>
             </View>
           </View>

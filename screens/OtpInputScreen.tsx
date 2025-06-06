@@ -81,20 +81,20 @@ const OtpInputScreen = () => {
       <View className="flex-1 bg-white">
       {/* Header Section */}
       <View className="px-6 pt-20 pb-8">
-        <Text className="text-teal-600 text-5xl font-bold mb-2 font-ubuntu" style={{fontFamily:'Ubuntu_Bold'}}>Get Started!</Text>
-        <Text className="text-teal-600 text-2xl font-medium font-ubuntu" style={{fontFamily:'Ubuntu_Medium'}}>Verify to Sign up</Text>
+        <Text className="text-teal-600 text-5xl font-bold mb-2 font-ubuntu" style={{fontFamily:'Ubuntu-Bold'}}>Get Started!</Text>
+        <Text className="text-teal-600 text-2xl font-medium font-ubuntu" style={{fontFamily:'Ubuntu-Medium'}}>Verify to Sign up</Text>
       </View>
 
       <View className="flex-1 px-6">
         {/* Instructions */}
-        <Text className="text-gray-700 text-base mb-8 leading-6" style={{fontFamily:'Ubuntu_Regular'}}>
+        <Text className="text-gray-700 text-base mb-8 leading-6" style={{fontFamily:'Ubuntu-Regular'}}>
           Enter the code from the sms we sent to{'\n'}
-          <Text className="font-semibold text-black" style={{fontFamily:'Ubuntu_Medium'}}>+260{value.replace(/^\+260/, '')}</Text>.
+          <Text className="font-semibold text-black" style={{fontFamily:'Ubuntu-Medium'}}>+260{value.replace(/^\+260/, '')}</Text>.
         </Text>
 
         {/* Countdown Timer */}
         <View className="items-center mb-8">
-          <Text className="text-teal-600 text-3xl font-bold" style={{fontFamily:'Ubuntu_Bold'}}>
+          <Text className="text-teal-600 text-3xl font-bold" style={{fontFamily:'Ubuntu-Bold'}}>
             {formatCountdown(countdown)}
           </Text>
         </View>
@@ -123,7 +123,7 @@ const OtpInputScreen = () => {
             onPress={handleResendOtp} 
             disabled={isResendDisabled}
           >
-            <Text className={`text-base font-medium ${isResendDisabled ? 'text-gray-400' : 'text-teal-600'}`} style={{fontFamily:'Ubuntu_Medium'}}>
+            <Text className={`text-base font-medium ${isResendDisabled ? 'text-gray-400' : 'text-teal-600'}`} style={{fontFamily:'Ubuntu-Medium'}}>
               {isResendDisabled ? "Didn't Receive OTP? Resend!" : 'Resend OTP'}
             </Text>
           </Pressable>
@@ -136,7 +136,7 @@ const OtpInputScreen = () => {
             onPress={handleVerifyOtp}
             disabled={otp.join('').length < 4}
           >
-            <Text className="text-white text-center text-lg font-semibold" style={{fontFamily:'Ubuntu_Bold'}}>
+            <Text className="text-white text-center text-lg font-semibold" style={{fontFamily:'Ubuntu-Bold'}}>
               Verify & Continue
             </Text>
           </Pressable>

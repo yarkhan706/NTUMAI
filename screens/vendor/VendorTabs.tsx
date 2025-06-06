@@ -1,8 +1,5 @@
 // VendorTabs.tsx - Main Vendor Navigation
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text,  } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { VendorDashboard } from './VendorDashboard';
 import { VendorProducts } from './VendorProducts';

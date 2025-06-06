@@ -26,10 +26,10 @@ const ContinueBoardingScreen = ({ navigation }) => {
 
         {/* Congratulations text */}
         <View className='px-6 mb-8'>
-          <AppText className='text-teal-600 text-3xl font-bold text-left mb-2' style={{fontFamily:'Ubuntu_Bold'}}>
+          <AppText className='text-teal-600 text-3xl font-bold text-left mb-2' style={{fontFamily:'Ubuntu-Bold'}}>
             Congratulations,
           </AppText>
-          <AppText className='text-teal-600 text-3xl font-bold text-left mb-8' style={{fontFamily:'Ubuntu_Bold'}}>
+          <AppText className='text-teal-600 text-3xl font-bold text-left mb-8' style={{fontFamily:'Ubuntu-Bold'}}>
             You are ready to start!
           </AppText>
         </View>
@@ -43,10 +43,10 @@ const ContinueBoardingScreen = ({ navigation }) => {
               style={{ opacity: 1 }}
             >
           <View className='bg-teal-500/70  p-10 mb-4'>
-            <AppText className='text-white text-xl font-semibold ' style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className='text-white text-xl font-semibold ' style={{fontFamily:'Ubuntu-Bold'}}>
               Sanka che!
             </AppText>
-            <AppText className='text-white text-xl opacity-90' style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className='text-white text-xl opacity-90' style={{fontFamily:'Ubuntu-Bold'}}>
               What will be done?
             </AppText>
           </View>
@@ -62,10 +62,10 @@ const ContinueBoardingScreen = ({ navigation }) => {
     >
         <View className="flex-row justify-between items-center w-full">
         <View>
-            <AppText className="text-white text-xs text-left font-medium" style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className="text-white text-xs text-left font-medium" style={{fontFamily:'Ubuntu-Bold'}}>
             Order Deliveries
             </AppText>
-            <AppText className="text-white text-xs opacity-80 text-left" style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className="text-white text-xs opacity-80 text-left" style={{fontFamily:'Ubuntu-Bold'}}>
             within 30 min
             </AppText>
         </View>
@@ -86,10 +86,10 @@ const ContinueBoardingScreen = ({ navigation }) => {
     >
         <View className="flex-row justify-between items-center w-full">
         <View>
-            <AppText className="text-green-700 text-xs font-medium text-left" style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className="text-green-700 text-xs font-medium text-left" style={{fontFamily:'Ubuntu-Bold'}}>
             Register as a biker
             </AppText>
-            <AppText className="text-green-600 text-xs opacity-80 text-left" style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className="text-green-600 text-xs opacity-80 text-left" style={{fontFamily:'Ubuntu-Bold'}}>
             Earn money delivering orders
             </AppText>
         </View>
@@ -109,7 +109,7 @@ const ContinueBoardingScreen = ({ navigation }) => {
             className='bg-teal-500 rounded-xl py-4 items-center'
             onPress={() => navigation.navigate('Login')}
           >
-            <AppText className='text-white text-lg font-semibold' style={{fontFamily:'Ubuntu_Bold'}}>
+            <AppText className='text-white text-lg font-semibold' style={{fontFamily:'Ubuntu-Bold'}}>
               Continue
             </AppText>
           </TouchableOpacity>

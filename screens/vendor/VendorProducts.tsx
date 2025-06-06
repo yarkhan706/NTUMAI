@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   View,
-  Text,
   ScrollView,
   TouchableOpacity,
   SafeAreaView,
@@ -13,6 +12,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { VendorHeader } from './VendorHeader';
+import Text from '../../components/Text';
 
 export function VendorProducts() {
   const [activeTab, setActiveTab] = useState('Products');
@@ -79,16 +79,16 @@ export function VendorProducts() {
               className="w-16 h-16 rounded-lg mr-4"
             />
             <View className="flex-1">
-              <Text className="font-semibold text-gray-900 text-lg">{product.name}</Text>
-              <Text className="text-gray-500 text-sm">{product.category}</Text>
-              <Text className="font-bold text-emerald-600 text-lg mt-1">{product.price}</Text>
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-semibold text-gray-900 text-lg">{product.name}</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-500 text-sm">{product.category}</Text>
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-bold text-emerald-600 text-lg mt-1">{product.price}</Text>
             </View>
             <View className="items-end">
               <TouchableOpacity
                 onPress={() => toggleProductStatus(product.id)}
                 className={`px-3 py-1 rounded-full mb-2 ${product.status === 'Active' ? 'bg-green-100' : 'bg-gray-100'}`}
               >
-                <Text className={`text-xs font-medium ${product.status === 'Active' ? 'text-green-600' : 'text-gray-600'}`}>
+                <Text style={{fontFamily:'Ubuntu-Regular'}} className={`text-xs font-medium ${product.status === 'Active' ? 'text-green-600' : 'text-gray-600'}`}>
                   {product.status}
                 </Text>
               </TouchableOpacity>
@@ -112,8 +112,8 @@ export function VendorProducts() {
       {categories.map(category => (
         <View key={category.id} className="bg-white rounded-xl p-4 mb-3 flex-row items-center justify-between">
           <View>
-            <Text className="font-semibold text-gray-900">{category.name}</Text>
-            <Text className="text-gray-500">{category.count} items</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-semibold text-gray-900">{category.name}</Text>
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-500">{category.count} items</Text>
           </View>
           <View className="flex-row">
             <TouchableOpacity className="p-2 mr-1">
@@ -134,7 +134,7 @@ export function VendorProducts() {
         <View key={brand.id} className="bg-white rounded-xl p-4 mb-3 flex-row items-center justify-between">
           <View className="flex-row items-center">
             <Image source={{ uri: brand.logo }} className="w-12 h-12 rounded-full mr-3" />
-            <Text className="font-semibold text-gray-900">{brand.name}</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-semibold text-gray-900">{brand.name}</Text>
           </View>
           <View className="flex-row">
             <TouchableOpacity className="p-2 mr-1">
@@ -154,12 +154,12 @@ export function VendorProducts() {
       {promotions.length === 0 ? (
         <View className="bg-white rounded-xl p-6 items-center">
           <Ionicons name="pricetag-outline" size={48} color="#9CA3AF" />
-          <Text className="text-gray-500 mt-4">No promotions yet</Text>
+          <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-500 mt-4">No promotions yet</Text>
         </View>
       ) : (
         promotions.map(promo => (
           <View key={promo.id} className="bg-white rounded-xl p-4 mb-3 flex-row items-center justify-between">
-            <Text className="font-semibold text-gray-900">{promo.name}</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-semibold text-gray-900">{promo.name}</Text>
             <TouchableOpacity onPress={() => deleteItem('Promotion', promo.id)} className="p-2">
               <Ionicons name="trash-outline" size={16} color="#EF4444" />
             </TouchableOpacity>
@@ -174,34 +174,34 @@ export function VendorProducts() {
       <ScrollView className="flex-1 px-4 py-6">
         {activeTab === 'Products' && (
           <>
-            <Text className="text-xl font-semibold mb-4">General Information</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-xl font-semibold mb-4">General Information</Text>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Product Name</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Product Name</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Enter product name" />
             </View>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Price</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Price</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="$0.00" keyboardType="numeric" />
             </View>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Category</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Category</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Select category" />
             </View>
-            <Text className="text-xl font-semibold mb-4">Media</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-xl font-semibold mb-4">Media</Text>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Product Image</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Product Image</Text>
               <TouchableOpacity className="border border-gray-300 rounded-lg px-4 py-3 items-center">
-                <Text className="text-gray-500">Upload Image</Text>
+                <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-500">Upload Image</Text>
               </TouchableOpacity>
             </View>
-            <Text className="text-xl font-semibold mb-4">Variant</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-xl font-semibold mb-4">Variant</Text>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Size / Color / etc.</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Size / Color / etc.</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Variant details" />
             </View>
-            <Text className="text-xl font-semibold mb-4">Options</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-xl font-semibold mb-4">Options</Text>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Options</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Options</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Product options" />
             </View>
           </>
@@ -209,7 +209,7 @@ export function VendorProducts() {
         {activeTab === 'Categories' && (
           <>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Category Name</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Category Name</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Enter category name" />
             </View>
           </>
@@ -217,13 +217,13 @@ export function VendorProducts() {
         {activeTab === 'Brands' && (
           <>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Brand Name</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Brand Name</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Enter brand name" />
             </View>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Brand Logo</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Brand Logo</Text>
               <TouchableOpacity className="border border-gray-300 rounded-lg px-4 py-3 items-center">
-                <Text className="text-gray-500">Upload Logo</Text>
+                <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-500">Upload Logo</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -231,11 +231,11 @@ export function VendorProducts() {
         {activeTab === 'Promotion' && (
           <>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Promotion Name</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Promotion Name</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Enter promotion name" />
             </View>
             <View className="mb-6">
-              <Text className="text-gray-700 font-medium mb-2">Discount</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 font-medium mb-2">Discount</Text>
               <TextInput className="border border-gray-300 rounded-lg px-4 py-3" placeholder="Enter discount" />
             </View>
           </>
@@ -250,10 +250,10 @@ export function VendorProducts() {
       <StatusBar barStyle="dark-content" />
       <View className="bg-white px-4 py-4 border-b border-gray-200">
         <View className="flex-row items-center justify-between mb-4">
-          <Text className="text-2xl font-bold text-gray-900">Marketplace</Text>
+          <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-2xl font-bold text-gray-900">Marketplace</Text>
           <TouchableOpacity onPress={() => setShowAddModal(true)} className="bg-emerald-600 px-4 py-2 rounded-lg flex-row items-center">
             <Ionicons name="add" size={20} color="white" />
-            <Text className="text-white font-medium ml-1">Add New</Text>
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-white font-medium ml-1">Add New</Text>
           </TouchableOpacity>
         </View>
         <View className="flex-row bg-gray-100 rounded-lg p-1">
@@ -263,7 +263,7 @@ export function VendorProducts() {
               onPress={() => setActiveTab(tab)}
               className={`flex-1 py-2 rounded-md ${activeTab === tab ? 'bg-white' : ''}`}
             >
-              <Text className={`text-center font-medium ${activeTab === tab ? 'text-emerald-600' : 'text-gray-600'}`}>
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className={`text-center font-medium ${activeTab === tab ? 'text-emerald-600' : 'text-gray-600'}`}>
                 {tab}
               </Text>
             </TouchableOpacity>
@@ -281,11 +281,11 @@ export function VendorProducts() {
           <View className="px-4 py-4 border-b border-gray-200">
             <View className="flex-row items-center justify-between">
               <TouchableOpacity onPress={() => setShowAddModal(false)}>
-                <Text className="text-emerald-600 font-medium">Cancel</Text>
+                <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-emerald-600 font-medium">Cancel</Text>
               </TouchableOpacity>
-              <Text className="text-lg font-semibold">Add {activeTab.slice(0, -1)}</Text>
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-lg font-semibold">Add {activeTab.slice(0, -1)}</Text>
               <TouchableOpacity>
-                <Text className="text-emerald-600 font-medium">Save</Text>
+                <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-emerald-600 font-medium">Save</Text>
               </TouchableOpacity>
             </View>
           </View>

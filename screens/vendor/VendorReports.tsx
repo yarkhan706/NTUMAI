@@ -1,8 +1,9 @@
-import { SafeAreaView, ScrollView, View, Text, TouchableOpacity, Image } from "react-native";
+import {  ScrollView, View,  TouchableOpacity, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { VendorHeader } from "./VendorHeader";
+import Text from "../../components/Text";
 
 export function VendorReports() {
   const [selectedTab, setSelectedTab] = useState("Payment report");
@@ -43,6 +44,7 @@ export function VendorReports() {
             }`}
           >
             <Text
+              style={{fontFamily:'Ubuntu-Medium'}}
               className={`text-sm font-medium ${
                 selectedTab === tab ? "text-white" : "text-gray-600"
               }`}
@@ -62,24 +64,24 @@ export function VendorReports() {
               className="w-12 h-12 rounded-full mr-4 border-2 border-white"
             />
             <View>
-              <Text className="text-white text-lg font-semibold">
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-white text-lg font-semibold">
                 {reportData.user.name}
               </Text>
-              <Text className="text-emerald-100 text-xs">
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-emerald-100 text-xs">
                 Member since {reportData.user.memberSince}
               </Text>
             </View>
           </View>
           <View className="flex-row justify-between items-center">
             <View>
-              <Text className="text-emerald-100 text-xs">Account Number</Text>
-              <Text className="text-white text-xl font-bold">
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-emerald-100 text-xs">Account Number</Text>
+              <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-white text-xl font-bold">
                 {reportData.accountNumber}
               </Text>
             </View>
             <View className="items-end">
-              <Text className="text-emerald-100 text-xs">Balance</Text>
-              <Text className="text-white text-xl font-bold">
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-emerald-100 text-xs">Balance</Text>
+              <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-white text-xl font-bold">
                 {reportData.totalBalance}
               </Text>
             </View>
@@ -89,7 +91,7 @@ export function VendorReports() {
         {/* Recent Transactions */}
         <View className="bg-white rounded-xl shadow-sm mb-6">
           <View className="border-b border-gray-100 p-4">
-            <Text className="text-lg font-semibold text-gray-900">
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-lg font-semibold text-gray-900">
               Recent Transactions
             </Text>
           </View>
@@ -102,13 +104,13 @@ export function VendorReports() {
                 <View className="w-10 h-10 bg-emerald-100 rounded-full items-center justify-center mr-3">
                   <Ionicons name="restaurant" size={18} color="#10B981" />
                 </View>
-                <Text className="text-gray-900 font-medium">{tx.name}</Text>
+                <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-900 font-medium">{tx.name}</Text>
               </View>
-              <Text className="text-emerald-600 font-bold">${tx.amount}</Text>
+              <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-emerald-600 font-bold">${tx.amount}</Text>
             </View>
           ))}
           <TouchableOpacity className="items-center p-4">
-            <Text className="text-emerald-600 font-medium">
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-emerald-600 font-medium">
               View All Transactions
             </Text>
           </TouchableOpacity>
@@ -128,10 +130,10 @@ export function VendorReports() {
                     style={{ backgroundColor: stat.color }}
                   />
                 </View>
-                <Text className="text-2xl font-bold text-gray-900 mb-1">
+                <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-2xl font-bold text-gray-900 mb-1">
                   {stat.value}
                 </Text>
-                <Text className="text-gray-500 text-sm">{stat.title}</Text>
+                <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-500 text-sm">{stat.title}</Text>
               </View>
             </View>
           ))}

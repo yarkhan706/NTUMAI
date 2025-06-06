@@ -1,7 +1,8 @@
 // VendorHeader.tsx
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Text from "../../components/Text";
 
 export function VendorHeader() {
   return (
@@ -13,8 +14,8 @@ export function VendorHeader() {
           className="w-10 h-10 rounded-full mr-3 bg-white"
         />
         <View>
-          <Text className="text-white font-semibold text-lg">Hi, Gibson</Text>
-          <Text className="text-white text-xs">Stay safe</Text>
+          <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-white font-semibold text-lg">Hi, Gibson</Text>
+          <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-white text-xs">Stay safe</Text>
         </View>
       </View>
 

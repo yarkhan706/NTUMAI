@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import {
   View,
-  Text,
   ScrollView,
   TouchableOpacity,
   SafeAreaView,
@@ -10,6 +9,7 @@ import {
   Image,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Text from '../../components/Text';
 
 export function VendorProfile() {
   const [isEditing, setIsEditing] = useState(false);
@@ -54,10 +54,10 @@ export function VendorProfile() {
             source={{ uri: restaurantImage }}
             className="w-24 h-24 rounded-full border-4 border-white mb-3"
           />
-          <Text className="text-2xl font-bold text-gray-900">{profileData.name}</Text>
+          <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-2xl font-bold text-gray-900">{profileData.name}</Text>
           <View className="flex-row items-center mt-1">
             <Ionicons name="star" size={16} color="#F59E0B" />
-            <Text className="text-sm text-gray-600 ml-1">
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-sm text-gray-600 ml-1">
               {profileData.rating} ({profileData.reviews} reviews)
             </Text>
           </View>
@@ -65,7 +65,7 @@ export function VendorProfile() {
             className="bg-emerald-600 px-4 py-2 rounded-lg mt-2"
             onPress={() => setIsEditing(!isEditing)}
           >
-            <Text className="text-white font-medium">
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-white font-medium">
               {isEditing ? 'Save Profile' : 'Edit Profile'}
             </Text>
           </TouchableOpacity>
@@ -75,15 +75,15 @@ export function VendorProfile() {
         <View className="mt-6 space-y-4">
           <View className="flex-row items-center">
             <Ionicons name="location-outline" size={20} color="#6B7280" />
-            <Text className="text-gray-700 ml-3 flex-1">{profileData.address}</Text>
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 ml-3 flex-1">{profileData.address}</Text>
           </View>
           <View className="flex-row items-center">
             <Ionicons name="call-outline" size={20} color="#6B7280" />
-            <Text className="text-gray-700 ml-3">{profileData.phone}</Text>
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 ml-3">{profileData.phone}</Text>
           </View>
           <View className="flex-row items-center">
             <Ionicons name="mail-outline" size={20} color="#6B7280" />
-            <Text className="text-gray-700 ml-3">{profileData.email}</Text>
+            <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-700 ml-3">{profileData.email}</Text>
           </View>
         </View>
 
@@ -103,7 +103,7 @@ export function VendorProfile() {
               }`}
             >
               <Ionicons name={item.icon} size={20} color="#6B7280" />
-              <Text className="text-gray-900 ml-4 flex-1">{item.title}</Text>
+              <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-gray-900 ml-4 flex-1">{item.title}</Text>
               <Ionicons name="chevron-forward" size={16} color="#9CA3AF" />
             </TouchableOpacity>
           ))}
@@ -112,7 +112,7 @@ export function VendorProfile() {
         {/* Logout */}
         <TouchableOpacity className="bg-red-50 rounded-xl p-4 flex-row items-center justify-center">
           <Ionicons name="log-out-outline" size={20} color="#EF4444" />
-          <Text className="text-red-600 font-medium ml-2">Logout</Text>
+          <Text style={{fontFamily:'Ubuntu-Regular'}} className="text-red-600 font-medium ml-2">Logout</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>

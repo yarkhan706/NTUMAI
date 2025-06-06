@@ -2,15 +2,13 @@
 import React, { useState } from 'react';
 import {
   View,
-  Text,
   ScrollView,
   TouchableOpacity,
-  SafeAreaView,
   StatusBar,
-  Image,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { VendorHeader } from './VendorHeader';
+import Text from '../../components/Text';
 
 export function VendorDashboard() {
   const [selectedPeriod, setSelectedPeriod] = useState('Today');
@@ -37,8 +35,8 @@ export function VendorDashboard() {
       <View className="bg-white px-4 py-4 border-b border-gray-200">
         <View className="flex-row items-center justify-between">
           <View>
-            <Text className="text-2xl font-bold text-gray-900">Dashboard</Text>
-            <Text className="text-gray-500 mt-1">Welcome back, Vendor!</Text>
+            <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-2xl font-bold text-gray-900">Dashboard</Text>
+            <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-gray-500 mt-1">Welcome back, Vendor!</Text>
           </View>
           <TouchableOpacity className="p-2">
             <Ionicons name="notifications-outline" size={24} color="#374151" />
@@ -55,7 +53,7 @@ export function VendorDashboard() {
                 selectedPeriod === period ? 'bg-white' : ''
               }`}
             >
-              <Text className={`text-center font-medium ${
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className={`text-center font-medium ${
                 selectedPeriod === period ? 'text-emerald-600' : 'text-gray-600'
               }`}>
                 {period}
@@ -78,12 +76,12 @@ export function VendorDashboard() {
                       <View className={`w-6 h-6 rounded-full`} 
                             style={{ backgroundColor: stat.color }} />
                     </View>
-                    <Text className={`text-sm font-medium`} 
-                          style={{ color: stat.color }}>
+                    <Text  className={`text-sm font-medium`} 
+                          style={{ color: stat.color , fontFamily:'Ubuntu-Medium'}}>
                       {stat.change}
                     </Text>
                   </View>
-                  <Text className="text-2xl font-bold text-gray-900 mb-1">
+                  <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-2xl font-bold text-gray-900 mb-1">
                     {stat.value}
                   </Text>
                   <Text className="text-gray-500 text-sm">{stat.title}</Text>
@@ -95,7 +93,7 @@ export function VendorDashboard() {
 
         {/* Quick Actions */}
         <View className="px-4 mb-6">
-          <Text className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</Text>
+          <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</Text>
           <View className="flex-row justify-between">
             {[
               { title: 'Add Product', icon: 'add-circle', color: '#10B981' },
@@ -108,7 +106,7 @@ export function VendorDashboard() {
                       style={{ backgroundColor: `${action.color}20` }}>
                   <Ionicons name={action.icon} size={24} color={action.color} />
                 </View>
-                <Text className="text-xs text-gray-600 text-center">{action.title}</Text>
+                <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-xs text-gray-600 text-center">{action.title}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -117,9 +115,9 @@ export function VendorDashboard() {
         {/* Recent Orders */}
         <View className="px-4 mb-6">
           <View className="flex-row items-center justify-between mb-4">
-            <Text className="text-lg font-semibold text-gray-900">Recent Orders</Text>
+            <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-lg font-semibold text-gray-900">Recent Orders</Text>
             <TouchableOpacity>
-              <Text className="text-emerald-600 font-medium">View All</Text>
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-emerald-600 font-medium">View All</Text>
             </TouchableOpacity>
           </View>
           
@@ -129,12 +127,12 @@ export function VendorDashboard() {
                 <View className="flex-row items-center justify-between">
                   <View className="flex-1">
                     <View className="flex-row items-center mb-1">
-                      <Text className="font-semibold text-gray-900 mr-2">{order.id}</Text>
+                      <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-semibold text-gray-900 mr-2">{order.id}</Text>
                       <View className={`px-2 py-1 rounded-full ${
                         order.status === 'Preparing' ? 'bg-yellow-100' :
                         order.status === 'Ready' ? 'bg-green-100' : 'bg-gray-100'
                       }`}>
-                        <Text className={`text-xs font-medium ${
+                        <Text style={{fontFamily:'Ubuntu-Medium'}} className={`text-xs font-medium ${
                           order.status === 'Preparing' ? 'text-yellow-600' :
                           order.status === 'Ready' ? 'text-green-600' : 'text-gray-600'
                         }`}>
@@ -142,10 +140,10 @@ export function VendorDashboard() {
                         </Text>
                       </View>
                     </View>
-                    <Text className="text-gray-600 text-sm">{order.customer}</Text>
-                    <Text className="text-gray-400 text-xs mt-1">{order.time}</Text>
+                    <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-gray-600 text-sm">{order.customer}</Text>
+                    <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-gray-400 text-xs mt-1">{order.time}</Text>
                   </View>
-                  <Text className="font-bold text-gray-900">{order.amount}</Text>
+                  <Text style={{fontFamily:'Ubuntu-Medium'}} className="font-bold text-gray-900">{order.amount}</Text>
                 </View>
               </View>
             ))}

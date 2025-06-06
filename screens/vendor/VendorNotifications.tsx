@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   View,
-  Text,
   ScrollView,
   TouchableOpacity,
   SafeAreaView,
@@ -9,6 +8,8 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { VendorHeader } from './VendorHeader';
+import Text from '../../components/Text';
+
 
 interface Notification {
   id: string;
@@ -120,13 +121,13 @@ export function VendorNotifications() {
       {/* Header */}
       <View className="bg-white px-4 py-4 border-b border-gray-200">
         <View className="flex-row items-center justify-between">
-          <Text className="text-2xl font-bold text-gray-900">Notifications</Text>
+          <Text style={{fontFamily:'Ubuntu-Bold'}} className="text-2xl font-bold text-gray-900">Notifications</Text>
           {unreadCount > 0 && (
             <TouchableOpacity 
               onPress={markAllAsRead}
               className="bg-emerald-600 px-3 py-1 rounded-lg"
             >
-              <Text className="text-white text-sm font-medium">Mark All Read</Text>
+              <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-white text-sm font-medium">Mark All Read</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -139,7 +140,7 @@ export function VendorNotifications() {
               filter === 'all' ? 'bg-white shadow-sm' : ''
             }`}
           >
-            <Text className={`text-center font-medium ${
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className={`text-center font-medium ${
               filter === 'all' ? 'text-gray-900' : 'text-gray-600'
             }`}>
               All ({notifications.length})
@@ -151,7 +152,7 @@ export function VendorNotifications() {
               filter === 'unread' ? 'bg-white shadow-sm' : ''
             }`}
           >
-            <Text className={`text-center font-medium ${
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className={`text-center font-medium ${
               filter === 'unread' ? 'text-gray-900' : 'text-gray-600'
             }`}>
               Unread ({unreadCount})
@@ -164,10 +165,10 @@ export function VendorNotifications() {
         {filteredNotifications.length === 0 ? (
           <View className="flex-1 items-center justify-center py-20">
             <Ionicons name="notifications-outline" size={64} color="#D1D5DB" />
-            <Text className="text-gray-500 text-lg font-medium mt-4">
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-gray-500 text-lg font-medium mt-4">
               {filter === 'unread' ? 'No unread notifications' : 'No notifications'}
             </Text>
-            <Text className="text-gray-400 text-center mt-2 px-8">
+            <Text style={{fontFamily:'Ubuntu-Medium'}} className="text-gray-400 text-center mt-2 px-8">
               {filter === 'unread' 
                 ? 'All caught up! Check back later for new updates.' 
                 : 'You\'ll see order updates, payments, and reviews here.'
@@ -203,7 +204,7 @@ export function VendorNotifications() {
                   
                   <View className="flex-1">
                     <View className="flex-row items-center justify-between mb-1">
-                      <Text className={`font-semibold ${
+                      <Text style={{fontFamily:'Ubuntu-Medium'}} className={`font-semibold ${
                         !notification.read ? 'text-gray-900' : 'text-gray-700'
                       }`}>
                         {notification.title}
@@ -213,13 +214,13 @@ export function VendorNotifications() {
                       )}
                     </View>
                     
-                    <Text className={`text-sm mb-2 ${
+                    <Text style={{fontFamily:'Ubuntu-Light'}} className={`text-sm mb-2 ${
                       !notification.read ? 'text-gray-700' : 'text-gray-600'
                     }`}>
                       {notification.message}
                     </Text>
                     
-                    <Text className="text-xs text-gray-500">
+                    <Text style={{fontFamily:'Ubuntu-Light'}} className="text-xs text-gray-500">
                       {notification.time}
                     </Text>
                   </View>
