@@ -39,13 +39,7 @@ export default function VendorTabs() {
           backgroundColor: 'white',
           borderTopWidth: 1,
           borderTopColor: '#E5E7EB',
-          paddingTop: 10,
-          paddingBottom: 10,
-          height: 85,
-        },
-        tabBarLabelStyle: {
-          fontSize: 10,
-          fontWeight: '500',
+          height: '8%',
         },
       })}
     >

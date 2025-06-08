@@ -20,6 +20,9 @@ export default function HomeTabs() {
         tabBarActiveTintColor: '#14B8A6',
         tabBarInactiveTintColor: '#9CA3AF',
         headerShown: false,
+        tabBarStyle:{
+          height: '8%',
+        }
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />

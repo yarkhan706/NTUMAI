@@ -29,7 +29,7 @@ export function VendorDashboard() {
   return (
     <View className='flex-1'>
       <VendorHeader />
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
       
       {/* Header */}
       <View className="bg-white px-4 py-4 border-b border-gray-200">

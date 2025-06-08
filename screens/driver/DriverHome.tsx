@@ -523,7 +523,7 @@ const DriverHome = () => {
         tabBarStyle: {
           backgroundColor: 'white',
           borderTopColor: '#f3f4f6',
-          height: 60,
+          height: '8%',
           paddingBottom: 8,
           paddingTop: 8,
         },
